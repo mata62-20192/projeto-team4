@@ -1,8 +1,9 @@
 package entidades;
 
 public class Aluno {
+	
 	private String num_matricula;
-	private String nome;
+	private String nome_aluno;
 	private String contato;
 	
 	public String getNum_matricula() {
@@ -12,10 +13,10 @@ public class Aluno {
 		this.num_matricula = num_matricula;
 	}
 	public String getNome() {
-		return nome;
+		return contato;
 	}
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nome_aluno = nome;
 	}
 	public String getContato() {
 		return contato;
