@@ -4,6 +4,8 @@ public class Aluno {
 	
 	private String num_matricula;
 	private String nome_aluno;
+	private String periodo_ingresso;
+	private String curso;
 	private String contato;
 	
 	public String getNum_matricula() {
