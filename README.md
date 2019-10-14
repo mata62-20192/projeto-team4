@@ -1,5 +1,7 @@
 # projeto-team4
 projeto-team4 created by GitHub Classroom
+
+
 Projeto: sistema acadêmico (2019.2)
 Equipes de até 6 pessoas.
 
@@ -30,6 +32,8 @@ Neste momento não é necessário criar nenhuma interface com o usuário. No ent
 Certas classes devem ser imutáveis
 Defina o critério de igualidade das classes quando isso for relevante
 Use conjuntos ou listas de acordo com a situação
+
+
 Entrega 2
 A definir.
 
