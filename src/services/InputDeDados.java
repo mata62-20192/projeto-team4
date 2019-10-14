@@ -5,8 +5,9 @@ import java.util.Scanner;
 
 import entidades.Curso;
 import entidades.Disciplina;
+import entidades.DisciplinaCurso;
 import entidades.Universidade;
-
+// codigo modelo para manipular os dados do arquivo
 public class InputDeDados {
 
 	public static void main(String[] args) {
