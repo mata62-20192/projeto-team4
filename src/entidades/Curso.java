@@ -38,6 +38,10 @@ public class Curso {
 	public void setDisc_optativas(ArrayList<DisciplinaCurso> disc_optativas) {
 		this.disc_optativas = disc_optativas;
 	}
+	public void addDisciplinaCurso(DisciplinaCurso disciplinaCurso) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	

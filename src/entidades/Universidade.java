@@ -35,6 +35,18 @@ public class Universidade {
 	public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
 		this.disciplinas_univ = disciplinas;
 	}
+	public void addCurso(Curso curso) {
+		// TODO Auto-generated method stub
+		
+	}
+	public Disciplina findDisciplina(String codigoDisc) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public void addDisciplina(Disciplina disciplina) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }
