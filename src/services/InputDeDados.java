@@ -1,5 +1,12 @@
 package services;
 
+import java.io.File;
+import java.util.Scanner;
+
+import entidades.Curso;
+import entidades.Disciplina;
+import entidades.Universidade;
+
 public class InputDeDados {
 
 	public static void main(String[] args) {
