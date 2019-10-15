@@ -2,7 +2,7 @@ package entidades;
 
 import java.util.ArrayList;
 
-public class DisciplinaCurso {
+public class ComponenteCurricular {
 	
 	private Disciplina disciplina;
 	private String semestre;
@@ -10,7 +10,7 @@ public class DisciplinaCurso {
 	private ArrayList<Disciplina> pre_requisitos;
 	
 	
-	public DisciplinaCurso(Disciplina disciplina, String semestre, String natureza,
+	public ComponenteCurricular(Disciplina disciplina, String semestre, String natureza,
 			ArrayList<Disciplina> pre_requisitos) {
 		super();
 		this.disciplina = disciplina;

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import entidades.Curso;
 import entidades.Disciplina;
-import entidades.DisciplinaCurso;
+import entidades.ComponenteCurricular;
 import entidades.Universidade;
 // codigo modelo para manipular os dados do arquivo
 public class InputDeDados {
@@ -42,7 +42,7 @@ public class InputDeDados {
 		            disciplina = new Disciplina(codigoDisc, nomeDisc, ch);
 		            universidade.addDisciplina(disciplina);
 		        }
-		        DisciplinaCurso disciplinaCurso = new DisciplinaCurso(disciplina, semestre, Natureza.fromString(natureza), new HashSet<Disciplina>()); 
+		        ComponenteCurricular disciplinaCurso = new ComponenteCurricular(disciplina, semestre, Natureza.fromString(natureza), new HashSet<Disciplina>()); 
 		        curso.addDisciplinaCurso(disciplinaCurso);
 		    }
 		}
