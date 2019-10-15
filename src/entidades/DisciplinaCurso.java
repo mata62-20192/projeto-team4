@@ -10,7 +10,6 @@ public class DisciplinaCurso {
 	private ArrayList<Disciplina> pre_requisitos;
 	
 	
-	
 	public DisciplinaCurso(Disciplina disciplina, String semestre, String natureza,
 			ArrayList<Disciplina> pre_requisitos) {
 		super();
