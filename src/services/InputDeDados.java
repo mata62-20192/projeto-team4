@@ -1,7 +1,10 @@
 package services;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -12,16 +15,26 @@ import entidades.Universidade;
 // codigo modelo para manipular os dados do arquivo
 public class InputDeDados {
 
-	public static void main(String[] args) throws FileNotFoundException {
-		File file = new File("dados.txt");
-		Scanner input = new Scanner(file);
+	public static void main(String[] args) throws IOException {
+        BufferedReader buffRead = new BufferedReader(new FileReader("dados.txt"));
+        String linha = "";
+        while (true) {
+            if (linha != null) {
+                System.out.println(linha);
+ 
+            } else
+                break;
+            linha = buffRead.readLine();
+        }
+        
+	
 
 		Universidade universidade = new Universidade();
 
-		int numCursos = input.nextInt();
+		int numCursos = Integer.parseInt(buffRead.readLine());
 		for (int i = 0; i < numCursos; i++) {
 		    // Le nome
-		    input.skip("\n");
+			buffRead.skip("\n");
 		    String nome = input.nextLine();
 		    String codigo = input.nextLine();
 		    int numDisciplinas = input.nextInt();
@@ -49,7 +62,7 @@ public class InputDeDados {
 		    }
 		}
 
-		input.close();
+		buffRead.close();
 
 	}
 
