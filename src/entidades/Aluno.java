@@ -1,5 +1,7 @@
 package entidades;
 
+import java.util.ArrayList;
+
 public class Aluno {
 	
 	private String num_matricula;
@@ -7,6 +9,14 @@ public class Aluno {
 	private String periodo_ingresso;
 	private Curso curso;
 	private String contato;
+	private ArrayList<AlunoDisciplina> disciplinas_cursadas;
+
+	public ArrayList<AlunoDisciplina> getDisciplinas_cursadas() {
+		return disciplinas_cursadas;
+	}
+	public void setDisciplinas_cursadas(ArrayList<AlunoDisciplina> disciplinas_cursadas) {
+		this.disciplinas_cursadas = disciplinas_cursadas;
+	}
 	
 	public String getNum_matricula() {
 		return num_matricula;

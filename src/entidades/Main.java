@@ -6,17 +6,17 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Curso cc = new Curso("1", "Ciência da Computação");
-		Curso si = new Curso("2","Sistemas de Informação");
-		Curso lc = new Curso("3","Licenciatura da Computação");
+		Curso cc = new Curso("1", "Ciï¿½ncia da Computaï¿½ï¿½o");
+		Curso si = new Curso("2","Sistemas de Informaï¿½ï¿½o");
+		Curso lc = new Curso("3","Licenciatura da Computaï¿½ï¿½o");
 		
 		Disciplina engSoft = new Disciplina("MATA63", "Engenharia de Software II", 68);
 		ArrayList<ComponenteCurricular> compCur = new ArrayList<ComponenteCurricular>();
 		ComponenteCurricular compCC = new ComponenteCurricular(engSoft, cc, "exatas");
 		ComponenteCurricular compSI = new ComponenteCurricular(engSoft, si, "exatas");
 		ComponenteCurricular compLC = new ComponenteCurricular(engSoft, lc, "exatas");
-		Semestre sem_6 = new Semestre("6° Semestre", cc);
-		Semestre sem_5 = new Semestre("5° Semestre", si);
+		Semestre sem_6 = new Semestre("6ï¿½ Semestre", cc);
+		Semestre sem_5 = new Semestre("5ï¿½ Semestre", si);
 		compCur.add(compCC);
 		sem_6.setDisciplinas(compCur);
 		ArrayList<Semestre> semestres = new ArrayList<Semestre>();
@@ -31,10 +31,22 @@ public class Main {
 		compCur.remove(0);
 		compCur.add(compLC);
 		lc.setDisc_optativas(compCur);
-		
+
+		Aluno aluno = new Aluno();
+		aluno.setNome("Aluno Teste");
+		aluno.setNum_matricula("123");
+		aluno.setCurso(cc);
+		ArrayList<AlunoDisciplina> disc_cursadas = new ArrayList<AlunoDisciplina>();
+		AlunoDisciplina ad = new AlunoDisciplina(aluno, compCC);
+		disc_cursadas.add(ad);
+		aluno.setDisciplinas_cursadas(disc_cursadas);
+		aluno.getDisciplinas_cursadas().get(0).setConceito(Conceito.Aprovado);
+		aluno.getDisciplinas_cursadas().get(0).setNota(7);
 		System.out.println(cc.getDisc_obrigatorias().get(0).getDisciplinas().get(0).getNatureza());
 		System.out.println(lc.getDisc_optativas().get(0).getDisciplina().getNome());
 		System.out.println(si.getDisc_obrigatorias().get(0).getNome_semestre());
+		System.out.println(aluno.getDisciplinas_cursadas().get(0).getComponente_curricular().getDisciplina().getNome());
+		System.out.println(aluno.getDisciplinas_cursadas().get(0).getNota());
 		
 	}
 
