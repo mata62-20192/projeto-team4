@@ -6,13 +6,15 @@ public class Curso {
 	
 	private String codigo_curso;
 	private String nome_curso;
-	private ArrayList<ComponenteCurricular> disc_obrigatorias;
+	private ArrayList<Semestre> disc_obrigatorias;
 	private ArrayList<ComponenteCurricular> disc_optativas;
 
 	public Curso(String codigo, String nome) {
 		super();
 		this.codigo_curso = codigo;
 		this.codigo_curso = nome;
+		this.disc_obrigatorias = new ArrayList<Semestre>();
+		this.disc_optativas = new ArrayList<ComponenteCurricular>();
 	}
 	public String getCodigo() {
 		return codigo_curso;
@@ -26,10 +28,10 @@ public class Curso {
 	public void setNome(String nome) {
 		this.codigo_curso = nome;
 	}
-	public ArrayList<ComponenteCurricular> getDisc_obrigatorias() {
+	public ArrayList<Semestre> getDisc_obrigatorias() {
 		return disc_obrigatorias;
 	}
-	public void setDisc_obrigatorias(ArrayList<ComponenteCurricular> disc_obrigatorias) {
+	public void setDisc_obrigatorias(ArrayList<Semestre> disc_obrigatorias) {
 		this.disc_obrigatorias = disc_obrigatorias;
 	}
 	public ArrayList<ComponenteCurricular> getDisc_optativas() {
@@ -38,6 +40,8 @@ public class Curso {
 	public void setDisc_optativas(ArrayList<ComponenteCurricular> disc_optativas) {
 		this.disc_optativas = disc_optativas;
 	}
+	
+	
 	public void addDisciplinaCurso(ComponenteCurricular disciplinaCurso) {
 		// TODO Auto-generated method stub
 		

@@ -5,7 +5,7 @@ public class Aluno {
 	private String num_matricula;
 	private String nome_aluno;
 	private String periodo_ingresso;
-	private String curso;
+	private Curso curso;
 	private String contato;
 	
 	public String getNum_matricula() {
@@ -27,5 +27,18 @@ public class Aluno {
 		this.contato = contato;
 	}
 	
+	public Curso getCurso() {
+		return curso;
+	}
+	public void setCurso(Curso curso) {
+		this.curso = curso;
+	}
+	
+	public String getPeriodo_ingresso() {
+		return periodo_ingresso;
+	}
+	public void setPeriodo_ingresso(String periodo_ingresso) {
+		this.periodo_ingresso = periodo_ingresso;
+	}
 	
 }

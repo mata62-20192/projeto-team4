@@ -8,15 +8,21 @@ public class ComponenteCurricular {
 	private String semestre;
 	private String natureza;
 	private ArrayList<Disciplina> pre_requisitos;
+	private Curso curso;
 	
 	
-	public ComponenteCurricular(Disciplina disciplina, String semestre, String natureza,
-			ArrayList<Disciplina> pre_requisitos) {
+	public ComponenteCurricular(Disciplina disciplina, Curso curso, String natureza) {
 		super();
 		this.disciplina = disciplina;
-		this.semestre = semestre;
+		this.curso = curso;
 		this.natureza = natureza;
-		this.pre_requisitos = pre_requisitos;
+		this.pre_requisitos = new ArrayList<Disciplina>();
+	}
+	public Curso getCurso() {
+		return curso;
+	}
+	public void setCurso(Curso curso) {
+		this.curso = curso;
 	}
 	public Disciplina getDisciplina() {
 		return disciplina;

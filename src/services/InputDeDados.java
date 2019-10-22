@@ -1,6 +1,8 @@
 package services;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashSet;
 import java.util.Scanner;
 
 import entidades.Curso;
@@ -10,7 +12,7 @@ import entidades.Universidade;
 // codigo modelo para manipular os dados do arquivo
 public class InputDeDados {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		File file = new File("dados.txt");
 		Scanner input = new Scanner(file);
 
@@ -42,8 +44,8 @@ public class InputDeDados {
 		            disciplina = new Disciplina(codigoDisc, nomeDisc, ch);
 		            universidade.addDisciplina(disciplina);
 		        }
-		        ComponenteCurricular disciplinaCurso = new ComponenteCurricular(disciplina, semestre, Natureza.fromString(natureza), new HashSet<Disciplina>()); 
-		        curso.addDisciplinaCurso(disciplinaCurso);
+		       // ComponenteCurricular disciplinaCurso = new ComponenteCurricular(disciplina, semestre, Natureza.fromString(natureza), new HashSet<Disciplina>()); 
+		        //curso.addDisciplinaCurso(disciplinaCurso);
 		    }
 		}
 
