@@ -9,7 +9,7 @@ public class Disciplina {
 	
 	public Disciplina(String codigo, String nome, int carga_horaria) {
 		this.codigo_disc = codigo;
-		this.codigo_disc = nome;
+		this.nome_disc = nome;
 		this.ch = carga_horaria;
 	}
 	
@@ -20,10 +20,10 @@ public class Disciplina {
 		this.codigo_disc = codigo;
 	}
 	public String getNome() {
-		return codigo_disc;
+		return nome_disc;
 	}
 	public void setNome(String nome) {
-		this.codigo_disc = nome;
+		this.nome_disc = nome;
 	}
 	public int getCarga_horaria() {
 		return ch;

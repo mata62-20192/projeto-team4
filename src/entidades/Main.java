@@ -1,10 +1,11 @@
 package entidades;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		Curso cc = new Curso("1", "Ci�ncia da Computa��o");
 		Curso si = new Curso("2","Sistemas de Informa��o");
@@ -21,6 +22,7 @@ public class Main {
 		sem_6.setDisciplinas(compCur);
 		ArrayList<Semestre> semestres = new ArrayList<Semestre>();
 		semestres.add(sem_6);
+		semestres.add(sem_5);
 		cc.setDisc_obrigatorias(semestres);
 		semestres.remove(0);
 		semestres.add(sem_5);
@@ -48,6 +50,8 @@ public class Main {
 		System.out.println(aluno.getDisciplinas_cursadas().get(0).getComponente_curricular().getDisciplina().getNome());
 		System.out.println(aluno.getDisciplinas_cursadas().get(0).getNota());
 		
+		cc.imprimeCurriculoCursoTXT();
+		aluno.imprimeHistoricoTXT();
 	}
 
 }
