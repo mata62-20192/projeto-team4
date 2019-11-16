@@ -1,6 +1,7 @@
-package entidades;
+package br.ufba.mata62.team4.domain;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class ComponenteCurricular {
 	
@@ -17,6 +18,9 @@ public class ComponenteCurricular {
 		this.curso = curso;
 		this.natureza = natureza;
 		this.pre_requisitos = new ArrayList<Disciplina>();
+	}
+	public ComponenteCurricular(Disciplina disciplina2, int semestre2, String natureza2, HashSet<Disciplina> hashSet) {
+		// TODO Auto-generated constructor stub
 	}
 	public Curso getCurso() {
 		return curso;

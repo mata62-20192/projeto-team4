@@ -1,4 +1,4 @@
-package entidades;
+package br.ufba.mata62.team4.domain;
 
 public class AlunoDisciplina {
 	private Aluno aluno;

@@ -1,4 +1,4 @@
-package services;
+package br.ufba.mata62.team4.service;
 
 import java.io.FileWriter;
 import java.io.IOException;

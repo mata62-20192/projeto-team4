@@ -1,4 +1,4 @@
-package entidades;
+package br.ufba.mata62.team4.domain;
 
 import java.io.IOException;
 import java.util.ArrayList;
