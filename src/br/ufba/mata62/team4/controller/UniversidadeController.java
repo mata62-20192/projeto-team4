@@ -53,7 +53,7 @@ public class UniversidadeController {
 				new CadastrarAlunoController(cursoService).setVisible(true);
 			}
 		});
-		btnCadastrarAluno.setBounds(10, 76, 147, 23);
+		btnCadastrarAluno.setBounds(93, 88, 147, 23);
 		frmUniversidade.getContentPane().add(btnCadastrarAluno);
 		
 		JButton btnListarAlunos = new JButton("Listar alunos");
@@ -62,17 +62,8 @@ public class UniversidadeController {
 				new ListarAlunosController(cursoService).setVisible(true);
 			}
 		});
-		btnListarAlunos.setBounds(167, 76, 147, 23);
+		btnListarAlunos.setBounds(250, 88, 147, 23);
 		frmUniversidade.getContentPane().add(btnListarAlunos);
-		
-		JButton btnBuscarAluno = new JButton("Buscar aluno");
-		btnBuscarAluno.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				new BuscarAlunoController(cursoService).setVisible(true);
-			}
-		});
-		btnBuscarAluno.setBounds(324, 76, 147, 23);
-		frmUniversidade.getContentPane().add(btnBuscarAluno);
 		
 		JButton btnListarCurrculo = new JButton("Listar curr\u00EDculo");
 		btnListarCurrculo.addActionListener(new ActionListener() {
@@ -80,7 +71,7 @@ public class UniversidadeController {
 				new ListarCurriculoController(cursoService).setVisible(true);
 			}
 		});
-		btnListarCurrculo.setBounds(10, 125, 147, 23);
+		btnListarCurrculo.setBounds(250, 136, 147, 23);
 		frmUniversidade.getContentPane().add(btnListarCurrculo);
 		
 		JButton btnEscalonamento = new JButton("Escalonamento");
@@ -89,7 +80,7 @@ public class UniversidadeController {
 				new EscalonamentoController().setVisible(true);
 			}
 		});
-		btnEscalonamento.setBounds(167, 125, 147, 23);
+		btnEscalonamento.setBounds(93, 136, 147, 23);
 		frmUniversidade.getContentPane().add(btnEscalonamento);
 	}
 }
