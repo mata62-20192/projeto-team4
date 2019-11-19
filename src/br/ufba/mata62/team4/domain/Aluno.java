@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+import br.ufba.mata62.team4.service.AlunoService;
+
 public class Aluno implements Comparable{
 	
 	private String numMatricula;
@@ -57,8 +59,8 @@ public class Aluno implements Comparable{
 	public double getcR() {
 		return cR;
 	}
-	public void setcR(double cR) {
-		this.cR = cR;
+	public void setcR(double cr) {
+		this.cR = cr;
 	}
 	
 	public int compareTo(Object aluno) {
@@ -71,6 +73,9 @@ public class Aluno implements Comparable{
 		return 0;
 	}
 
+	public void addDisciplina(AlunoDisciplina alunoDisciplina) {
+		disciplinasCursadas.add(alunoDisciplina);
+	}
 	
 	
 }

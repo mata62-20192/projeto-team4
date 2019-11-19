@@ -17,6 +17,7 @@ import java.awt.ScrollPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.awt.GridLayout;
 
 public class ListarCurriculoController extends JFrame {
 
@@ -50,7 +51,7 @@ public class ListarCurriculoController extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		contentPane.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		criarBotoesDosComponentes();
 	}
@@ -59,7 +60,7 @@ public class ListarCurriculoController extends JFrame {
 		
 		ArrayList<ComponenteCurricular> componentes = this.cursoService.getComponentes();
 		for (ComponenteCurricular cmp : componentes) {
-			JButton buttonComponente = new JButton(cmp.getDisciplina().toString());
+			JButton buttonComponente = new JButton(cmp.getDisciplina().getNome());
 			contentPane.add(buttonComponente);
 		}
 		

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import br.ufba.mata62.team4.domain.Aluno;
 
 import br.ufba.mata62.team4.domain.AlunoDisciplina;
+import br.ufba.mata62.team4.domain.ComponenteCurricular;
 import br.ufba.mata62.team4.domain.Curso;
 
 public class AlunoService {
@@ -134,5 +135,9 @@ public class AlunoService {
 	    escreverArquivo.println("</html>");
 	    
 	    escreverArquivo.close();
+	}
+	
+	public void addComponente(Aluno aluno, ComponenteCurricular componente) {
+		
 	}
 }

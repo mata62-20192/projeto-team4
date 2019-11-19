@@ -17,11 +17,13 @@ public class Main {
 		Curso si = new Curso("2","Sistemas de informacao");
 		Curso lc = new Curso("3","Licenciatura em Computacao");
 		
-		Disciplina engSoft = new Disciplina("MATA63", "Engenharia de Software II", 68);
+		Disciplina engSoft = new Disciplina("MATA63", "Engenharia de Software I", 68);
+		Disciplina sistemasOperacioanais = new Disciplina("MATA55", "Sistemas Operacionais", 68);
+		Disciplina engSoft2 = new Disciplina("MATA64", "Engenharia de Software II", 68);
 		ArrayList<ComponenteCurricular> compCur = new ArrayList<ComponenteCurricular>();
 		ComponenteCurricular compCC = new ComponenteCurricular(engSoft, cc, "exatas");
-		ComponenteCurricular compSI = new ComponenteCurricular(engSoft, si, "exatas");
-		ComponenteCurricular compLC = new ComponenteCurricular(engSoft, lc, "exatas");
+		ComponenteCurricular compSI = new ComponenteCurricular(engSoft2, si, "exatas");
+		ComponenteCurricular compLC = new ComponenteCurricular(sistemasOperacioanais, lc, "exatas");
 		Semestre sem_6 = new Semestre("6 Semestre", cc);
 		Semestre sem_5 = new Semestre("5 Semestre", si);
 		compCur.add(compCC);
@@ -41,7 +43,7 @@ public class Main {
 		lc.setDisc_optativas(compCur);
 
 		Aluno aluno = new Aluno();
-		aluno.setNome("Aluno Teste");
+		aluno.setNome("Joao");
 		aluno.setNum_matricula("123");
 		aluno.setCurso(cc);
 		ArrayList<AlunoDisciplina> disc_cursadas = new ArrayList<AlunoDisciplina>();
@@ -69,16 +71,19 @@ public class Main {
 		aluno3.setNome("carlos");
 		aluno3.setNum_matricula("12345");
 		
+
+		
+		
 		cursoService.getCurso().addAluno(aluno);
 		cursoService.getCurso().addAluno(aluno2);
 		cursoService.getCurso().addAluno(aluno3);
 		ArrayList<Aluno> alunos = cursoService.getCurso().getAlunos();
-		double cr = 5.0;
-		for(Aluno al: alunos) {
+		double cr = 3.0;
+		for(Aluno al : alunos) {
 			al.setcR(cr);
-			cr++;
+			cr+=2.0;
 		}
-		
+
 		cursoService.imprimeCurriculoCursoTXT(cc);
 		
 		alunoService.imprimeHistoricoTXT(aluno);

@@ -10,7 +10,7 @@ public class CrStrategyService extends EscalonamentoStrategyService{
 	@Override
 	public ArrayList<Aluno> calculaEscalonamento() {
 		CursoService cursoService = new CursoService();
-		System.out.println("implementar logica de escalonamento por CR");
+		System.out.println("Escalonamento:");
 		Collections.sort(cursoService.getAlunos());
 		 for(Aluno aluno : cursoService.getAlunos()) {
 			 System.out.println("Nome: " + aluno.getNome() +" " + "Cr: " + aluno.getcR());
