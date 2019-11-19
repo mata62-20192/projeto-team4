@@ -40,7 +40,9 @@ public void cadastrarAluno(String nome, String numMatricula, String periodoIngre
 
 	}
 
- 
+public Curso getCurso() {
+	return curso;
+}
 
 	public ArrayList<ComponenteCurricular> getComponentes() {
 		
@@ -109,4 +111,5 @@ public void cadastrarAluno(String nome, String numMatricula, String periodoIngre
 	   	}
 	    escreverArquivo.close();
 	}
+	
 }

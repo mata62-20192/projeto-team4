@@ -1,6 +1,6 @@
 Historico
 Aluno: Aluno Teste
-Curso: Ci�ncia da Computa��o
+Curso: Ciencia da computacao
 Carga horaria obrigatoria cursada: 0
 Carga horaria optativa cursada: 0
 Carga horaria total cursada: 68

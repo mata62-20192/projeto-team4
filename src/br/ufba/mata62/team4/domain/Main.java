@@ -10,17 +10,20 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		Curso cc = new Curso("1", "Ci�ncia da Computa��o");
-		Curso si = new Curso("2","Sistemas de Informa��o");
-		Curso lc = new Curso("3","Licenciatura da Computa��o");
+		AlunoService alunoService = new AlunoService();
+		CursoService cursoService = new CursoService();
+		
+		Curso cc = new Curso("1", "Ciencia da computacao");
+		Curso si = new Curso("2","Sistemas de informacao");
+		Curso lc = new Curso("3","Licenciatura em Computacao");
 		
 		Disciplina engSoft = new Disciplina("MATA63", "Engenharia de Software II", 68);
 		ArrayList<ComponenteCurricular> compCur = new ArrayList<ComponenteCurricular>();
 		ComponenteCurricular compCC = new ComponenteCurricular(engSoft, cc, "exatas");
 		ComponenteCurricular compSI = new ComponenteCurricular(engSoft, si, "exatas");
 		ComponenteCurricular compLC = new ComponenteCurricular(engSoft, lc, "exatas");
-		Semestre sem_6 = new Semestre("6� Semestre", cc);
-		Semestre sem_5 = new Semestre("5� Semestre", si);
+		Semestre sem_6 = new Semestre("6 Semestre", cc);
+		Semestre sem_5 = new Semestre("5 Semestre", si);
 		compCur.add(compCC);
 		sem_6.setDisciplinas(compCur);
 		ArrayList<Semestre> semestres = new ArrayList<Semestre>();
@@ -53,11 +56,33 @@ public class Main {
 		System.out.println(aluno.getDisciplinasCursadas().get(0).getComponenteCurricular().getDisciplina().getNome());
 		System.out.println(aluno.getDisciplinasCursadas().get(0).getNota());
 		
-		CursoService cursoService = new CursoService();
+		
+		cursoService.getCurso().addDisciplinaCurso(compLC);
+		cursoService.getCurso().addDisciplinaCurso(compSI);
+		cursoService.getCurso().addDisciplinaCurso(compCC);
+		
+		Aluno aluno2 = new Aluno();
+		aluno2.setNome("marcos");
+		aluno2.setNum_matricula("1234");
+		
+		Aluno aluno3 = new Aluno();
+		aluno3.setNome("carlos");
+		aluno3.setNum_matricula("12345");
+		
+		cursoService.getCurso().addAluno(aluno);
+		cursoService.getCurso().addAluno(aluno2);
+		cursoService.getCurso().addAluno(aluno3);
+		ArrayList<Aluno> alunos = cursoService.getCurso().getAlunos();
+		double cr = 5.0;
+		for(Aluno al: alunos) {
+			al.setcR(cr);
+			cr++;
+		}
+		
 		cursoService.imprimeCurriculoCursoTXT(cc);
 		
-		AlunoService alunoService = new AlunoService();
 		alunoService.imprimeHistoricoTXT(aluno);
+		
 		UniversidadeController uni = new UniversidadeController();
 		uni.main(args);
 		

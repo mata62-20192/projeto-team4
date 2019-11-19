@@ -30,7 +30,6 @@ public class Curso {
 		this.alunos.add(aluno);
 	}
 	
-	
 	public String getCodigo() {
 		return codigoCurso;
 	}
@@ -57,8 +56,7 @@ public class Curso {
 	}
 
 	public void addDisciplinaCurso(ComponenteCurricular disciplinaCurso) {
-		// TODO Auto-generated method stub
+		discOptativas.add(disciplinaCurso);
 		
-	}	
-	
+	}
 }

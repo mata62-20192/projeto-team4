@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-public class Aluno {
+public class Aluno implements Comparable{
 	
 	private String numMatricula;
 	private String nomeAluno;
@@ -60,6 +60,17 @@ public class Aluno {
 	public void setcR(double cR) {
 		this.cR = cR;
 	}
+	
+	public int compareTo(Object aluno) {
+		if(this.getcR() < ((Aluno) aluno).getcR()) {
+			return 1;
+		}
+		if(this.getcR() > ((Aluno) aluno).getcR()) {
+			return -1;
+		}
+		return 0;
+	}
+
 	
 	
 }
