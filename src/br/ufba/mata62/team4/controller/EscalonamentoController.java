@@ -6,6 +6,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import br.ufba.mata62.team4.service.CrStrategyService;
+import br.ufba.mata62.team4.service.HistoricoTxtService;
+import br.ufba.mata62.team4.service.SemestreStrategyService;
+
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -50,6 +55,8 @@ public class EscalonamentoController extends JFrame {
 		JButton btnOrdemCrescenteDe = new JButton("Ordem crescente de semestre");
 		btnOrdemCrescenteDe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				SemestreStrategyService semestreStrategy = new SemestreStrategyService();
+				semestreStrategy.calculaEscalonamento();
 			}
 		});
 		btnOrdemCrescenteDe.setBounds(238, 29, 214, 23);
@@ -64,6 +71,12 @@ public class EscalonamentoController extends JFrame {
 		contentPane.add(scrollPane);
 		
 		JButton btnOrdemDecrescenteDe = new JButton("Ordem decrescente de CR");
+		btnOrdemDecrescenteDe.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CrStrategyService crStrategy = new CrStrategyService();
+				crStrategy.calculaEscalonamento();
+			}
+		});
 		btnOrdemDecrescenteDe.setBounds(10, 29, 214, 23);
 		contentPane.add(btnOrdemDecrescenteDe);
 	}

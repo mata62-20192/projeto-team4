@@ -15,7 +15,7 @@ import java.util.Scanner;
 	Impressão do currículo do curso, que lista disciplinas obrigatórias, por semestre, e optativas, informando, para cada disciplina, o código, o nome, e a carga horária.
  * 
  */
-public class SistemaAcademico {
+public class SistemaAcademicoService {
 
 	public static void main(String[] args) {
 

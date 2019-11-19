@@ -109,4 +109,30 @@ public class AlunoService {
    		}
 	    escreverArquivo.close();
 	}
+	
+	public void imprimeHistoricoHTML(Aluno aluno) throws IOException {
+		FileWriter arquivo = new FileWriter("historico.html");
+	    PrintWriter escreverArquivo = new PrintWriter(arquivo);
+	    escreverArquivo.println("<!DOCTYPE html>");
+	    escreverArquivo.println("<html lang=\"pt-br\">");
+	    escreverArquivo.println("	<head>");
+	    escreverArquivo.println("		<title> Historico HTML </title>");
+	    escreverArquivo.println("	</head>");
+	    escreverArquivo.println("	<body>");
+	    escreverArquivo.println("		<p>Aluno: " + aluno.getNome() + "</p>");
+	    escreverArquivo.println("		<p>Curso: " + aluno.getCurso().getNome() + "</p>");
+	    escreverArquivo.println("		<p>Carga horaria obrigatoria cursada: " + calculaChOb(aluno) + "</p>");
+	    escreverArquivo.println("		<p>Carga horaria optativa cursada: " + calculaChOp(aluno) + "</p>");
+	    escreverArquivo.println("		<p>Carga horaria total cursada: " + calculaChTotal(aluno) + "</p>");
+	    escreverArquivo.println("		<p>Coeficiente de rendimento: " + calculaCr(aluno) + "</p>");
+	    
+	    for(AlunoDisciplina ad : aluno.getDisciplinasCursadas()) {
+    		escreverArquivo.println("		<p>" + ad.getComponenteCurricular().getDisciplina().getNome() +" "+ ad.getComponenteCurricular().getDisciplina().getCodigo() +" "+ ad.getComponenteCurricular().getDisciplina().getCargaHoraria() +" "+ ad.getComponenteCurricular().getNatureza() +" "+ ad.getNota() +" "+ ad.getConceito() + "</p>");
+   		}
+	    
+	    escreverArquivo.println("	</body>");
+	    escreverArquivo.println("</html>");
+	    
+	    escreverArquivo.close();
+	}
 }

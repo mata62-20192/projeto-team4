@@ -11,6 +11,9 @@ import javax.swing.border.EmptyBorder;
 
 import br.ufba.mata62.team4.domain.Aluno;
 import br.ufba.mata62.team4.service.AlunoService;
+import br.ufba.mata62.team4.service.HistoricoHtmlService;
+import br.ufba.mata62.team4.service.HistoricoService;
+import br.ufba.mata62.team4.service.HistoricoTxtService;
 
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -77,13 +80,8 @@ public class ExibirAlunoController extends JFrame {
 		JButton btnNewButton = new JButton("Imprimir historico TXT");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String al = lblNome.toString();
-				try {
-					alunoService.imprimeHistoricoTXT(alunoService.getAluno(al));
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				HistoricoTxtService historicoTxt = new HistoricoTxtService();
+				historicoTxt.GerarHistorico(aluno);
 			}
 		});
 		btnNewButton.setBounds(10, 227, 196, 23);
@@ -92,7 +90,8 @@ public class ExibirAlunoController extends JFrame {
 		JButton btnImprimirHistoricoHtml = new JButton("Imprimir historico HTML");
 		btnImprimirHistoricoHtml.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			
+				HistoricoHtmlService historicoHtml = new HistoricoHtmlService();
+				historicoHtml.GerarHistorico(aluno);
 			}
 		});
 		btnImprimirHistoricoHtml.setBounds(228, 227, 196, 23);

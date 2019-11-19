@@ -13,6 +13,7 @@ public class Aluno {
 	private Curso curso;
 	private String contato;
 	private ArrayList<AlunoDisciplina> disciplinasCursadas;
+	private double cR;
 
 	public ArrayList<AlunoDisciplina> getDisciplinasCursadas() {
 		return disciplinasCursadas;
@@ -52,6 +53,12 @@ public class Aluno {
 	}
 	public void setPeriodo_ingresso(String periodoIngresso) {
 		this.periodoIngresso = periodoIngresso;
+	}
+	public double getcR() {
+		return cR;
+	}
+	public void setcR(double cR) {
+		this.cR = cR;
 	}
 	
 	
