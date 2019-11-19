@@ -3,33 +3,33 @@ package br.ufba.mata62.team4.domain;
 import java.util.ArrayList;
 
 public class Disciplina {
-	private String codigo_disc;
-	private String nome_disc;
+	private String codigoDisc;
+	private String nomeDisc;
 	private int ch;
 	
-	public Disciplina(String codigo, String nome, int carga_horaria) {
-		this.codigo_disc = codigo;
-		this.nome_disc = nome;
-		this.ch = carga_horaria;
+	public Disciplina(String codigo, String nome, int cargaHoraria) {
+		this.codigoDisc = codigo;
+		this.nomeDisc = nome;
+		this.ch = cargaHoraria;
 	}
 	
 	public String getCodigo() {
-		return codigo_disc;
+		return codigoDisc;
 	}
 	public void setCodigo(String codigo) {
-		this.codigo_disc = codigo;
+		this.codigoDisc = codigo;
 	}
 	public String getNome() {
-		return nome_disc;
+		return nomeDisc;
 	}
 	public void setNome(String nome) {
-		this.nome_disc = nome;
+		this.nomeDisc = nome;
 	}
-	public int getCarga_horaria() {
+	public int getCargaHoraria() {
 		return ch;
 	}
-	public void setCarga_horaria(int carga_horaria) {
-		this.ch = carga_horaria;
+	public void setCargaHoraria(int cargaHoraria) {
+		this.ch = cargaHoraria;
 	}
 	
 	

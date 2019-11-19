@@ -2,14 +2,14 @@ package br.ufba.mata62.team4.domain;
 
 public class AlunoDisciplina {
 	private Aluno aluno;
-	private ComponenteCurricular componente_curricular;
+	private ComponenteCurricular componenteCurricular;
 	private Conceito conceito;
 	private double nota;
 	
-	public AlunoDisciplina(Aluno aluno, ComponenteCurricular componente_curricular) {
+	public AlunoDisciplina(Aluno aluno, ComponenteCurricular componenteCurricular) {
 		super();
 		this.aluno = aluno;
-		this.componente_curricular = componente_curricular;
+		this.componenteCurricular = componenteCurricular;
 	}
 
 	public Aluno getAluno() {
@@ -20,12 +20,12 @@ public class AlunoDisciplina {
 		this.aluno = aluno;
 	}
 
-	public ComponenteCurricular getComponente_curricular() {
-		return componente_curricular;
+	public ComponenteCurricular getComponenteCurricular() {
+		return componenteCurricular;
 	}
 
-	public void setComponente_curricular(ComponenteCurricular componente_curricular) {
-		this.componente_curricular = componente_curricular;
+	public void setComponente_curricular(ComponenteCurricular componenteCurricular) {
+		this.componenteCurricular = componenteCurricular;
 	}
 
 	public Conceito getConceito() {

@@ -7,19 +7,19 @@ import java.util.ArrayList;
 
 public class Curso {
 	
-	private String codigo_curso;
-	private String nome_curso;
+	private String codigoCurso;
+	private String nomeCurso;
 	private ArrayList<Aluno> alunos;
-	private ArrayList<Semestre> disc_obrigatorias;
-	private ArrayList<ComponenteCurricular> disc_optativas;
+	private ArrayList<Semestre> discObrigatorias;
+	private ArrayList<ComponenteCurricular> discOptativas;
 
 	public Curso(String codigo, String nome) {
 		super();
 		this.alunos = new ArrayList<Aluno>();
-		this.codigo_curso = codigo;
-		this.codigo_curso = nome;
-		this.disc_obrigatorias = new ArrayList<Semestre>();
-		this.disc_optativas = new ArrayList<ComponenteCurricular>();
+		this.codigoCurso = codigo;
+		this.codigoCurso = nome;
+		this.discObrigatorias = new ArrayList<Semestre>();
+		this.discOptativas = new ArrayList<ComponenteCurricular>();
 	}
 	
 	public ArrayList<Aluno> getAlunos(){
@@ -32,28 +32,28 @@ public class Curso {
 	
 	
 	public String getCodigo() {
-		return codigo_curso;
+		return codigoCurso;
 	}
 	public void setCodigo(String codigo) {
-		this.codigo_curso = codigo;
+		this.codigoCurso = codigo;
 	}
 	public String getNome() {
-		return codigo_curso;
+		return codigoCurso;
 	}
 	public void setNome(String nome) {
-		this.codigo_curso = nome;
+		this.codigoCurso = nome;
 	}
-	public ArrayList<Semestre> getDisc_obrigatorias() {
-		return disc_obrigatorias;
+	public ArrayList<Semestre> getDiscObrigatorias() {
+		return discObrigatorias;
 	}
-	public void setDisc_obrigatorias(ArrayList<Semestre> disc_obrigatorias) {
-		this.disc_obrigatorias = disc_obrigatorias;
+	public void setDisc_obrigatorias(ArrayList<Semestre> discObrigatorias) {
+		this.discObrigatorias = discObrigatorias;
 	}
-	public ArrayList<ComponenteCurricular> getDisc_optativas() {
-		return disc_optativas;
+	public ArrayList<ComponenteCurricular> getDiscOptativas() {
+		return discOptativas;
 	}
-	public void setDisc_optativas(ArrayList<ComponenteCurricular> disc_optativas) {
-		this.disc_optativas = disc_optativas;
+	public void setDisc_optativas(ArrayList<ComponenteCurricular> discOptativas) {
+		this.discOptativas = discOptativas;
 	}
 
 	public void addDisciplinaCurso(ComponenteCurricular disciplinaCurso) {

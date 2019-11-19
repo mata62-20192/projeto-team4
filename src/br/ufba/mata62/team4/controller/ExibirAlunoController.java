@@ -90,6 +90,11 @@ public class ExibirAlunoController extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnImprimirHistoricoHtml = new JButton("Imprimir historico HTML");
+		btnImprimirHistoricoHtml.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			
+			}
+		});
 		btnImprimirHistoricoHtml.setBounds(228, 227, 196, 23);
 		contentPane.add(btnImprimirHistoricoHtml);
 		

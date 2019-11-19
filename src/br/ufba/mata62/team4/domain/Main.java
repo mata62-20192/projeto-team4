@@ -2,6 +2,8 @@ package br.ufba.mata62.team4.domain;
 
 import java.io.IOException;
 
+import br.ufba.mata62.team4.controller.BuscarAlunoController;
+import br.ufba.mata62.team4.controller.UniversidadeController;
 import br.ufba.mata62.team4.service.*;
 import java.util.ArrayList;
 
@@ -44,19 +46,22 @@ public class Main {
 		AlunoDisciplina ad = new AlunoDisciplina(aluno, compCC);
 		disc_cursadas.add(ad);
 		aluno.setDisciplinas_cursadas(disc_cursadas);
-		aluno.getDisciplinas_cursadas().get(0).setConceito(Conceito.Aprovado);
-		aluno.getDisciplinas_cursadas().get(0).setNota(7);
-		System.out.println(cc.getDisc_obrigatorias().get(0).getDisciplinas().get(0).getNatureza());
-		System.out.println(lc.getDisc_optativas().get(0).getDisciplina().getNome());
-		System.out.println(si.getDisc_obrigatorias().get(0).getNome_semestre());
-		System.out.println(aluno.getDisciplinas_cursadas().get(0).getComponente_curricular().getDisciplina().getNome());
-		System.out.println(aluno.getDisciplinas_cursadas().get(0).getNota());
+		aluno.getDisciplinasCursadas().get(0).setConceito(Conceito.Aprovado);
+		aluno.getDisciplinasCursadas().get(0).setNota(7);
+		System.out.println(cc.getDiscObrigatorias().get(0).getDisciplinas().get(0).getNatureza());
+		System.out.println(lc.getDiscOptativas().get(0).getDisciplina().getNome());
+		System.out.println(si.getDiscObrigatorias().get(0).getNome_semestre());
+		System.out.println(aluno.getDisciplinasCursadas().get(0).getComponenteCurricular().getDisciplina().getNome());
+		System.out.println(aluno.getDisciplinasCursadas().get(0).getNota());
 		
 		CursoService cursoService = new CursoService();
 		cursoService.imprimeCurriculoCursoTXT(cc);
 		
 		AlunoService alunoService = new AlunoService();
 		alunoService.imprimeHistoricoTXT(aluno);
+		UniversidadeController uni = new UniversidadeController();
+		uni.main(args);
+		
 	}
 
 }

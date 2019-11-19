@@ -8,7 +8,7 @@ public class ComponenteCurricular {
 	private Disciplina disciplina;
 	private String semestre;
 	private String natureza;
-	private ArrayList<Disciplina> pre_requisitos;
+	private ArrayList<Disciplina> preRequisitos;
 	private Curso curso;
 	
 	
@@ -17,7 +17,7 @@ public class ComponenteCurricular {
 		this.disciplina = disciplina;
 		this.curso = curso;
 		this.natureza = natureza;
-		this.pre_requisitos = new ArrayList<Disciplina>();
+		this.preRequisitos = new ArrayList<Disciplina>();
 	}
 	public ComponenteCurricular(Disciplina disciplina2, int semestre2, String natureza2, HashSet<Disciplina> hashSet) {
 		// TODO Auto-generated constructor stub
@@ -46,11 +46,11 @@ public class ComponenteCurricular {
 	public void setNatureza(String natureza) {
 		this.natureza = natureza;
 	}
-	public ArrayList<Disciplina> getPre_requisitos() {
-		return pre_requisitos;
+	public ArrayList<Disciplina> getPreRequisitos() {
+		return preRequisitos;
 	}
-	public void setPre_requisitos(ArrayList<Disciplina> pre_requisitos) {
-		this.pre_requisitos = pre_requisitos;
+	public void setPre_requisitos(ArrayList<Disciplina> preRequisitos) {
+		this.preRequisitos = preRequisitos;
 	}
 	
 }

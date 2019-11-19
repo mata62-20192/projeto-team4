@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import br.ufba.mata62.team4.domain.Aluno;
+import br.ufba.mata62.team4.domain.ComponenteCurricular;
 import br.ufba.mata62.team4.service.CursoService;
 
 import javax.swing.JScrollPane;
@@ -56,18 +57,16 @@ public class ListarAlunosController extends JFrame {
 	}
 	
 	private void criarBotoesDosAlunos() {
-
 		ArrayList<Aluno> alunos = this.cursoService.getAlunos();
 		for (Aluno aluno : alunos) {
 			JButton buttonAluno = new JButton(aluno.getNome());
 			buttonAluno.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					System.out.println("Clicou no aluno " + aluno.getNome());
-					new ExibirAlunoController(aluno.getNome(), aluno.getNum_matricula(), aluno.getPeriodo_ingresso()).setVisible(true);
+					new ExibirAlunoController(aluno.getNome(), aluno.getNum_matricula(), aluno.getPeriodoIngresso()).setVisible(true);
 				}
 			});
 			contentPane.add(buttonAluno);
-			
 		}
 	}
 

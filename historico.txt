@@ -1,5 +1,5 @@
 Historico
-Aluno: null
+Aluno: Aluno Teste
 Curso: Ci�ncia da Computa��o
 Carga horaria obrigatoria cursada: 0
 Carga horaria optativa cursada: 0

@@ -14,14 +14,14 @@ public class AlunoService {
 	
 	private ArrayList<Aluno> alunos;
 	
-	public void cadastrarAluno(String nome, String num_matricula, String periodo_ingresso) throws Exception {
+	public void cadastrarAluno(String nome, String numMatricula, String periodongresso) throws Exception {
 		
-		if(!empty(nome) && !empty(num_matricula) && !empty(periodo_ingresso) && !exists(num_matricula)) {
+		if(!empty(nome) && !empty(numMatricula) && !empty(periodongresso) && !exists(numMatricula)) {
 			
 			Aluno novoAluno = new Aluno();
 			novoAluno.setNome(nome);
-			novoAluno.setNum_matricula(num_matricula);
-			novoAluno.setPeriodo_ingresso(periodo_ingresso);
+			novoAluno.setNum_matricula(numMatricula);
+			novoAluno.setPeriodo_ingresso(periodongresso);
 			
 			this.alunos.add(novoAluno);
 			
@@ -42,11 +42,11 @@ public class AlunoService {
 		return null;
 	}
 	
-	public boolean exists(String num_matricula) {
+	public boolean exists(String numMatricula) {
 		
 		for(Aluno al : alunos) {
 			
-			if(al.getNum_matricula() == num_matricula) {
+			if(al.getNum_matricula() == numMatricula) {
 				return true;
 			}
 			
@@ -65,32 +65,32 @@ public class AlunoService {
 	
 	public int calculaChTotal(Aluno aluno) {
 		int chTotal = 0;
-		for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinas_cursadas())
-			chTotal += alunoDisciplina.getComponente_curricular().getDisciplina().getCarga_horaria();
+		for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinasCursadas())
+			chTotal += alunoDisciplina.getComponenteCurricular().getDisciplina().getCargaHoraria();
 		return chTotal;
 	}
 	
 	public int calculaChOb(Aluno aluno) {
 		int chOb = 0;
-		for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinas_cursadas())
-			if(alunoDisciplina.getComponente_curricular().getNatureza()== "OB")
-				chOb += alunoDisciplina.getComponente_curricular().getDisciplina().getCarga_horaria();
+		for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinasCursadas())
+			if(alunoDisciplina.getComponenteCurricular().getNatureza()== "OB")
+				chOb += alunoDisciplina.getComponenteCurricular().getDisciplina().getCargaHoraria();
 		return chOb;
 	}
 	
 	public int calculaChOp(Aluno aluno) {
 		int chOp = 0;
-		for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinas_cursadas())
-			if(alunoDisciplina.getComponente_curricular().getNatureza()== "OP")
-				chOp += alunoDisciplina.getComponente_curricular().getDisciplina().getCarga_horaria();
+		for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinasCursadas())
+			if(alunoDisciplina.getComponenteCurricular().getNatureza()== "OP")
+				chOp += alunoDisciplina.getComponenteCurricular().getDisciplina().getCargaHoraria();
 		return chOp;
 	}
 	
 	public int calculaCr(Aluno aluno) {
 		int cr = 0;
-		for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinas_cursadas())
+		for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinasCursadas())
 			cr += alunoDisciplina.getNota();
-		return cr/aluno.getDisciplinas_cursadas().size();
+		return cr/aluno.getDisciplinasCursadas().size();
 	}
 
 	public void imprimeHistoricoTXT(Aluno aluno) throws IOException {
@@ -104,8 +104,8 @@ public class AlunoService {
 	    escreverArquivo.println("Carga horaria total cursada: " + calculaChTotal(aluno));
 	    escreverArquivo.println("Coeficiente de rendimento: " + calculaCr(aluno));
 	    
-	    for(AlunoDisciplina ad : aluno.getDisciplinas_cursadas()) {
-    		escreverArquivo.println("-" + ad.getComponente_curricular().getDisciplina().getNome() + " "+ ad.getComponente_curricular().getDisciplina().getCodigo() + " "+ ad.getComponente_curricular().getDisciplina().getCarga_horaria() + " "+ ad.getComponente_curricular().getNatureza() + " "+ ad.getNota() + " "+ ad.getConceito());
+	    for(AlunoDisciplina ad : aluno.getDisciplinasCursadas()) {
+    		escreverArquivo.println("-" + ad.getComponenteCurricular().getDisciplina().getNome() + " "+ ad.getComponenteCurricular().getDisciplina().getCodigo() + " "+ ad.getComponenteCurricular().getDisciplina().getCargaHoraria() + " "+ ad.getComponenteCurricular().getNatureza() + " "+ ad.getNota() + " "+ ad.getConceito());
    		}
 	    escreverArquivo.close();
 	}

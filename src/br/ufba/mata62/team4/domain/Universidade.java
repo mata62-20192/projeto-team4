@@ -3,42 +3,42 @@ package br.ufba.mata62.team4.domain;
 import java.util.ArrayList;
 
 public class Universidade {
-	private String nome_univ;
-	private String sigla_univ;
-	private ArrayList<Curso> cursos_univ;
-	private ArrayList<Disciplina> disciplinas_univ;
+	private String nomeUniv;
+	private String siglaUniv;
+	private ArrayList<Curso> cursosUniv;
+	private ArrayList<Disciplina> disciplinasUniv;
 	
 	public Universidade() {
 		
 	}
 	
-	public Universidade(String nome_univ) {
-		this.nome_univ = nome_univ;
+	public Universidade(String nomeUniv) {
+		this.nomeUniv = nomeUniv;
 	}
 	
 	public String getNome() {
-		return nome_univ;
+		return nomeUniv;
 	}
 	public void setNome(String nome) {
-		this.nome_univ = nome;
+		this.nomeUniv = nome;
 	}
 	public String getSigla() {
-		return sigla_univ;
+		return siglaUniv;
 	}
 	public void setSigla(String sigla) {
-		this.sigla_univ = sigla;
+		this.siglaUniv = sigla;
 	}
 	public ArrayList<Curso> getCursos() {
-		return cursos_univ;
+		return cursosUniv;
 	}
 	public void setCursos(ArrayList<Curso> cursos) {
-		this.cursos_univ = cursos;
+		this.cursosUniv = cursos;
 	}
 	public ArrayList<Disciplina> getDisciplinas() {
-		return disciplinas_univ;
+		return disciplinasUniv;
 	}
 	public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
-		this.disciplinas_univ = disciplinas;
+		this.disciplinasUniv = disciplinas;
 	}
 	public void addCurso(Curso curso) {
 		// TODO Auto-generated method stub

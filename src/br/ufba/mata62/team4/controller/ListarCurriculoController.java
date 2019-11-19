@@ -3,14 +3,24 @@ package br.ufba.mata62.team4.controller;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import br.ufba.mata62.team4.domain.Aluno;
+import br.ufba.mata62.team4.domain.ComponenteCurricular;
+import br.ufba.mata62.team4.service.CursoService;
+
 import javax.swing.JLabel;
 import java.awt.ScrollPane;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class ListarCurriculoController extends JFrame {
 
+	private CursoService cursoService;
 	private JPanel contentPane;
 
 	/**
@@ -20,7 +30,7 @@ public class ListarCurriculoController extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ListarCurriculoController frame = new ListarCurriculoController();
+					ListarCurriculoController frame = new ListarCurriculoController(new CursoService());
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,8 +41,10 @@ public class ListarCurriculoController extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param cursoService 
 	 */
-	public ListarCurriculoController() {
+	public ListarCurriculoController(CursoService cursoService) {
+		this.cursoService = cursoService;
 		setTitle("Listar curriculo");
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -40,13 +52,16 @@ public class ListarCurriculoController extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblCurriculoDoCurso = new JLabel("Curriculo do curso");
-		lblCurriculoDoCurso.setBounds(10, 11, 414, 14);
-		contentPane.add(lblCurriculoDoCurso);
-		
-		ScrollPane scrollPane = new ScrollPane();
-		scrollPane.setBounds(10, 31, 414, 220);
-		contentPane.add(scrollPane);
+		criarBotoesDosComponentes();
 	}
-
+	
+	private void criarBotoesDosComponentes() {
+		
+		ArrayList<ComponenteCurricular> componentes = this.cursoService.getComponentes();
+		for (ComponenteCurricular cmp : componentes) {
+			JButton buttonComponente = new JButton(cmp.getDisciplina().toString());
+			contentPane.add(buttonComponente);
+		}
+		
+	}
 }

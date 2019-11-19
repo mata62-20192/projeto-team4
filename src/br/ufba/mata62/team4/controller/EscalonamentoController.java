@@ -37,7 +37,7 @@ public class EscalonamentoController extends JFrame {
 	 */
 	public EscalonamentoController() {
 		setTitle("Escalonamento");
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 478, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -47,16 +47,12 @@ public class EscalonamentoController extends JFrame {
 		lblCriterioDeEscalonamento.setBounds(10, 11, 414, 14);
 		contentPane.add(lblCriterioDeEscalonamento);
 		
-		JButton btnNewButton = new JButton("Ordem decrescente de CR");
-		btnNewButton.setBounds(10, 29, 198, 23);
-		contentPane.add(btnNewButton);
-		
 		JButton btnOrdemCrescenteDe = new JButton("Ordem crescente de semestre");
 		btnOrdemCrescenteDe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnOrdemCrescenteDe.setBounds(226, 29, 198, 23);
+		btnOrdemCrescenteDe.setBounds(238, 29, 214, 23);
 		contentPane.add(btnOrdemCrescenteDe);
 		
 		JLabel lblEscalonamento = new JLabel("Escalonamento");
@@ -64,8 +60,11 @@ public class EscalonamentoController extends JFrame {
 		contentPane.add(lblEscalonamento);
 		
 		ScrollPane scrollPane = new ScrollPane();
-		scrollPane.setBounds(10, 79, 414, 172);
+		scrollPane.setBounds(10, 79, 442, 172);
 		contentPane.add(scrollPane);
+		
+		JButton btnOrdemDecrescenteDe = new JButton("Ordem decrescente de CR");
+		btnOrdemDecrescenteDe.setBounds(10, 29, 214, 23);
+		contentPane.add(btnOrdemDecrescenteDe);
 	}
-
 }

@@ -7,31 +7,31 @@ import java.util.ArrayList;
 
 public class Aluno {
 	
-	private String num_matricula;
-	private String nome_aluno;
-	private String periodo_ingresso;
+	private String numMatricula;
+	private String nomeAluno;
+	private String periodoIngresso;
 	private Curso curso;
 	private String contato;
-	private ArrayList<AlunoDisciplina> disciplinas_cursadas;
+	private ArrayList<AlunoDisciplina> disciplinasCursadas;
 
-	public ArrayList<AlunoDisciplina> getDisciplinas_cursadas() {
-		return disciplinas_cursadas;
+	public ArrayList<AlunoDisciplina> getDisciplinasCursadas() {
+		return disciplinasCursadas;
 	}
-	public void setDisciplinas_cursadas(ArrayList<AlunoDisciplina> disciplinas_cursadas) {
-		this.disciplinas_cursadas = disciplinas_cursadas;
+	public void setDisciplinas_cursadas(ArrayList<AlunoDisciplina> disciplinasCursadas) {
+		this.disciplinasCursadas = disciplinasCursadas;
 	}
 	
 	public String getNum_matricula() {
-		return this.num_matricula;
+		return this.numMatricula;
 	}
-	public void setNum_matricula(String num_matricula) {
-		this.num_matricula = num_matricula;
+	public void setNum_matricula(String numMatricula) {
+		this.numMatricula = numMatricula;
 	}
 	public String getNome() {
-		return this.nome_aluno;
+		return this.nomeAluno;
 	}
 	public void setNome(String nome) {
-		this.nome_aluno = nome;
+		this.nomeAluno = nome;
 	}
 	public String getContato() {
 		return contato;
@@ -47,11 +47,11 @@ public class Aluno {
 		this.curso = curso;
 	}
 	
-	public String getPeriodo_ingresso() {
-		return periodo_ingresso;
+	public String getPeriodoIngresso() {
+		return periodoIngresso;
 	}
-	public void setPeriodo_ingresso(String periodo_ingresso) {
-		this.periodo_ingresso = periodo_ingresso;
+	public void setPeriodo_ingresso(String periodoIngresso) {
+		this.periodoIngresso = periodoIngresso;
 	}
 	
 	

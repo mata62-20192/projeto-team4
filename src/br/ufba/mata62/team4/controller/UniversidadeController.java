@@ -77,7 +77,7 @@ public class UniversidadeController {
 		JButton btnListarCurrculo = new JButton("Listar curr\u00EDculo");
 		btnListarCurrculo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new ListarCurriculoController().setVisible(true);
+				new ListarCurriculoController(cursoService).setVisible(true);
 			}
 		});
 		btnListarCurrculo.setBounds(10, 125, 147, 23);
@@ -86,7 +86,7 @@ public class UniversidadeController {
 		JButton btnEscalonamento = new JButton("Escalonamento");
 		btnEscalonamento.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new ListarCurriculoController().setVisible(true);
+				new EscalonamentoController().setVisible(true);
 			}
 		});
 		btnEscalonamento.setBounds(167, 125, 147, 23);
