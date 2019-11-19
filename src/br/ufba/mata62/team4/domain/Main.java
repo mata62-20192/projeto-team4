@@ -1,6 +1,8 @@
 package br.ufba.mata62.team4.domain;
 
 import java.io.IOException;
+
+import br.ufba.mata62.team4.service.*;
 import java.util.ArrayList;
 
 public class Main {
@@ -50,8 +52,11 @@ public class Main {
 		System.out.println(aluno.getDisciplinas_cursadas().get(0).getComponente_curricular().getDisciplina().getNome());
 		System.out.println(aluno.getDisciplinas_cursadas().get(0).getNota());
 		
-		cc.imprimeCurriculoCursoTXT();
-		aluno.imprimeHistoricoTXT();
+		CursoService cursoService = new CursoService();
+		cursoService.imprimeCurriculoCursoTXT(cc);
+		
+		AlunoService alunoService = new AlunoService();
+		alunoService.imprimeHistoricoTXT(aluno);
 	}
 
 }

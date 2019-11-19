@@ -54,51 +54,5 @@ public class Aluno {
 		this.periodo_ingresso = periodo_ingresso;
 	}
 	
-	public int calculaChTotal() {
-		int chTotal = 0;
-		for (AlunoDisciplina alunoDisciplina : disciplinas_cursadas)
-			chTotal += alunoDisciplina.getComponente_curricular().getDisciplina().getCarga_horaria();
-		return chTotal;
-	}
-	
-	public int calculaChOb() {
-		int chOb = 0;
-		for (AlunoDisciplina alunoDisciplina : disciplinas_cursadas)
-			if(alunoDisciplina.getComponente_curricular().getNatureza()== "OB")
-				chOb += alunoDisciplina.getComponente_curricular().getDisciplina().getCarga_horaria();
-		return chOb;
-	}
-	
-	public int calculaChOp() {
-		int chOp = 0;
-		for (AlunoDisciplina alunoDisciplina : disciplinas_cursadas)
-			if(alunoDisciplina.getComponente_curricular().getNatureza()== "OP")
-				chOp += alunoDisciplina.getComponente_curricular().getDisciplina().getCarga_horaria();
-		return chOp;
-	}
-	
-	public int calculaCr() {
-		int cr = 0;
-		for (AlunoDisciplina alunoDisciplina : disciplinas_cursadas)
-			cr += alunoDisciplina.getNota();
-		return cr/disciplinas_cursadas.size();
-	}
-
-	public void imprimeHistoricoTXT() throws IOException {
-		FileWriter arquivo = new FileWriter("historico.txt");
-	    PrintWriter escreverArquivo = new PrintWriter(arquivo);
-	    escreverArquivo.println("Historico");
-	    escreverArquivo.println("Aluno: " + nome_aluno);
-	    escreverArquivo.println("Curso: " + this.getCurso().getNome());
-	    escreverArquivo.println("Carga horaria obrigatoria cursada: " + calculaChOb());
-	    escreverArquivo.println("Carga horaria optativa cursada: " + calculaChOp());
-	    escreverArquivo.println("Carga horaria total cursada: " + calculaChTotal());
-	    escreverArquivo.println("Coeficiente de rendimento: " + calculaCr());
-	    
-	    for(AlunoDisciplina ad : this.getDisciplinas_cursadas()) {
-    		escreverArquivo.println("-" + ad.getComponente_curricular().getDisciplina().getNome() + " "+ ad.getComponente_curricular().getDisciplina().getCodigo() + " "+ ad.getComponente_curricular().getDisciplina().getCarga_horaria() + " "+ ad.getComponente_curricular().getNatureza() + " "+ ad.getNota() + " "+ ad.getConceito());
-   		}
-	    escreverArquivo.close();
-	}
 	
 }
