@@ -71,18 +71,12 @@ public class Main {
 		aluno3.setNome("carlos");
 		aluno3.setNum_matricula("12345");
 		
-
-		
+		aluno.setcR(3.0);
+		aluno2.setcR(5.0);
 		
 		cursoService.getCurso().addAluno(aluno);
 		cursoService.getCurso().addAluno(aluno2);
 		cursoService.getCurso().addAluno(aluno3);
-		ArrayList<Aluno> alunos = cursoService.getCurso().getAlunos();
-		double cr = 3.0;
-		for(Aluno al : alunos) {
-			al.setcR(cr);
-			cr+=2.0;
-		}
 
 		cursoService.imprimeCurriculoCursoTXT(cc);
 		
