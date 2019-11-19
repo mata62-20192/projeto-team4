@@ -31,6 +31,17 @@ public class AlunoService {
 
 	}
 	
+	public Aluno getAluno(String aluno) {
+		for(Aluno al : alunos) {
+			
+			if(al.getNome() == aluno) {
+				return al;
+			}
+			
+		}
+		return null;
+	}
+	
 	public boolean exists(String num_matricula) {
 		
 		for(Aluno al : alunos) {

@@ -6,21 +6,23 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
-import java.awt.FlowLayout;
-import javax.swing.JTextField;
+
+import br.ufba.mata62.team4.domain.Curso;
+import br.ufba.mata62.team4.service.CursoService;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import br.ufba.mata62.team4.service.*;
+
 public class CadastrarAlunoController extends JFrame {
-	private CursoService cs;
 	private JPanel contentPane;
-	private JTextField textNome;
-	private JTextField textMatricula;
-	private JTextField textSemestre;
+	private JTextField txtNome;
+	private JTextField txtMatricula;
+	private JTextField txtSemestre;
+	private CursoService cursoService;
 
 	/**
 	 * Launch the application.
@@ -41,52 +43,56 @@ public class CadastrarAlunoController extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public CadastrarAlunoController(CursoService cs) {
-		this.cs = cs;
+	public CadastrarAlunoController(CursoService cursoService) {
+		setTitle("Cadastrar aluno");
+		this.cursoService = cursoService;
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(0, 2, 0, 0));
+		contentPane.setLayout(null);
 		
 		JLabel lblNome = new JLabel("Nome");
+		lblNome.setBounds(10, 11, 414, 14);
 		contentPane.add(lblNome);
 		
-		textNome = new JTextField();
-		contentPane.add(textNome);
-		textNome.setColumns(10);
+		txtNome = new JTextField();
+		txtNome.setBounds(10, 30, 414, 20);
+		contentPane.add(txtNome);
+		txtNome.setColumns(10);
 		
-		JLabel lblMatrcula = new JLabel("Matrícula");
-		contentPane.add(lblMatrcula);
+		txtMatricula = new JTextField();
+		txtMatricula.setColumns(10);
+		txtMatricula.setBounds(10, 80, 414, 20);
+		contentPane.add(txtMatricula);
 		
-		textMatricula = new JTextField();
-		contentPane.add(textMatricula);
-		textMatricula.setColumns(10);
+		JLabel lblMatricula = new JLabel("Matricula");
+		lblMatricula.setBounds(10, 61, 414, 14);
+		contentPane.add(lblMatricula);
+		
+		txtSemestre = new JTextField();
+		txtSemestre.setColumns(10);
+		txtSemestre.setBounds(10, 130, 414, 20);
+		contentPane.add(txtSemestre);
 		
 		JLabel lblSemestre = new JLabel("Semestre");
+		lblSemestre.setBounds(10, 111, 414, 14);
 		contentPane.add(lblSemestre);
 		
-		textSemestre = new JTextField();
-		contentPane.add(textSemestre);
-		textSemestre.setColumns(10);
-		
-		JLabel label_1 = new JLabel("");
-		contentPane.add(label_1);
-		
-		JButton btnSalvar = new JButton("Salvar");
-		btnSalvar.addActionListener(new ActionListener() {
+		JButton btnConfirmar = new JButton("Confirmar");
+		btnConfirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String nome = textNome.getText();
-				String matricula = textMatricula.getText();
-				String semestre = textSemestre.getText();
-				
-				if (nome.isEmpty()) {
-					JOptionPane.showMessageDialog(null, "O nome não pode ser vazio.");
+				String nome = txtNome.getText();
+				String matricula = txtMatricula.getText();
+				String semestre = txtSemestre.getText();
+				if (nome.isEmpty() || matricula.isEmpty() || semestre.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Nenhum dos campos pode ser vazio.");
+				} else if (cursoService.exists(matricula, nome)) {
+					JOptionPane.showMessageDialog(null, "O aluno ja esta cadastrado.");
 				} else {
 					System.out.println(nome + "\n" + matricula + "\n" + semestre);
-					
 					try {
-						cs.cadastrarAluno(nome, matricula, semestre);
+						cursoService.cadastrarAluno(nome, matricula, semestre);
 					} catch (IllegalStateException er) {
 						JOptionPane.showMessageDialog(null, er.getMessage());
 					}catch(IllegalArgumentException err) {
@@ -96,10 +102,8 @@ public class CadastrarAlunoController extends JFrame {
 				}
 			}
 		});
-		contentPane.add(btnSalvar);
-		
-		JLabel label_2 = new JLabel("");
-		contentPane.add(label_2);
+		btnConfirmar.setBounds(287, 227, 137, 23);
+		contentPane.add(btnConfirmar);
 	}
 
 }

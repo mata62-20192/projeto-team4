@@ -20,11 +20,11 @@ private static Curso curso = new Curso("Banco de Dados", "MATA-55");
 public void cadastrarAluno(String nome, String num_matricula, String periodo_ingresso) throws IllegalStateException,IllegalArgumentException {
 	
 		if(empty(nome) || empty(num_matricula) || empty(periodo_ingresso)) {
-			throw new  IllegalStateException("Não é possivel adicionar um aluno sem nome, matricula ou semestre.");
+			throw new  IllegalStateException("Nao eh possivel adicionar um aluno sem nome, matricula ou semestre.");
 		}
 		
 		if(exists(num_matricula, nome)) {
-			throw new IllegalArgumentException("Aluno já faz parte do curso.");
+			throw new IllegalArgumentException("Aluno ja faz parte do curso.");
 		}
 
 		if(!empty(nome) && !empty(num_matricula) && !empty(periodo_ingresso)) {
