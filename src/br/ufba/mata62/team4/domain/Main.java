@@ -2,7 +2,6 @@ package br.ufba.mata62.team4.domain;
 
 import java.io.IOException;
 
-import br.ufba.mata62.team4.controller.BuscarAlunoController;
 import br.ufba.mata62.team4.controller.UniversidadeController;
 import br.ufba.mata62.team4.service.*;
 import java.util.ArrayList;
