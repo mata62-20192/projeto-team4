@@ -1,0 +1,8 @@
+Historico
+Aluno: null
+Curso: Ci�ncia da Computa��o
+Carga horaria obrigatoria cursada: 0
+Carga horaria optativa cursada: 0
+Carga horaria total cursada: 68
+Coeficiente de rendimento: 7
+-Engenharia de Software II MATA63 68 exatas 7.0 Aprovado

@@ -22,13 +22,13 @@ public class Aluno {
 	}
 	
 	public String getNum_matricula() {
-		return num_matricula;
+		return this.num_matricula;
 	}
 	public void setNum_matricula(String num_matricula) {
 		this.num_matricula = num_matricula;
 	}
 	public String getNome() {
-		return contato;
+		return this.nome_aluno;
 	}
 	public void setNome(String nome) {
 		this.nome_aluno = nome;

@@ -9,16 +9,28 @@ public class Curso {
 	
 	private String codigo_curso;
 	private String nome_curso;
+	private ArrayList<Aluno> alunos;
 	private ArrayList<Semestre> disc_obrigatorias;
 	private ArrayList<ComponenteCurricular> disc_optativas;
 
 	public Curso(String codigo, String nome) {
 		super();
+		this.alunos = new ArrayList<Aluno>();
 		this.codigo_curso = codigo;
 		this.codigo_curso = nome;
 		this.disc_obrigatorias = new ArrayList<Semestre>();
 		this.disc_optativas = new ArrayList<ComponenteCurricular>();
 	}
+	
+	public ArrayList<Aluno> getAlunos(){
+		return this.alunos;
+	}
+	
+	public void addAluno(Aluno aluno) {
+		this.alunos.add(aluno);
+	}
+	
+	
 	public String getCodigo() {
 		return codigo_curso;
 	}
@@ -43,8 +55,6 @@ public class Curso {
 	public void setDisc_optativas(ArrayList<ComponenteCurricular> disc_optativas) {
 		this.disc_optativas = disc_optativas;
 	}
-	
-
 	
 	
 }

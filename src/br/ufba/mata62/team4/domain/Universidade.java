@@ -11,6 +11,11 @@ public class Universidade {
 	public Universidade() {
 		
 	}
+	
+	public Universidade(String nome_univ) {
+		this.nome_univ = nome_univ;
+	}
+	
 	public String getNome() {
 		return nome_univ;
 	}

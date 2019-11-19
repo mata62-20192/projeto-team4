@@ -1,5 +1,11 @@
 package br.ufba.mata62.team4.service;
+import br.ufba.mata62.team4.domain.Universidade;
 
 public class UniversidadeService {
-	//Classes responsáveis por manipular as classes do pacote domain
+	
+	private static Universidade universidade = new Universidade("UFBA");
+	
+	public static Universidade getUniversidade() {
+		return universidade;
+	}
 }
