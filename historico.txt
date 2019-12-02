@@ -1,8 +1,0 @@
-Historico
-Aluno: Joao
-Curso: Ciencia da computacao
-Carga horaria obrigatoria cursada: 0
-Carga horaria optativa cursada: 0
-Carga horaria total cursada: 68
-Coeficiente de rendimento: 7
--Engenharia de Software I MATA63 68 exatas 7.0 Aprovado

@@ -1,7 +1,6 @@
 package br.ufba.mata62.team4.repository;
 
 import java.io.File;
-import java.util.HashSet;
 import java.util.Scanner;
 
 import br.ufba.mata62.team4.domain.ComponenteCurricular;
@@ -10,57 +9,53 @@ import br.ufba.mata62.team4.domain.Disciplina;
 import br.ufba.mata62.team4.domain.Universidade;
 
 public class InputDeDados {
-	private Universidade uni;
+	private Universidade universidade;
 	private String arquivo;
 	
-	public InputDeDados(Universidade uni, String arquivo) {
-		this.uni = uni;
+	public InputDeDados(Universidade universidade, String arquivo) {
+		this.universidade = universidade;
 		this.arquivo = arquivo;
 	}
 	
 	public boolean leArquivo() {
 		try {
-            File file = new File(System.getProperty("user.dir") + "/dados.txt");
-            System.out.println(file.getAbsolutePath());
+            File file = new File(arquivo);
             Scanner input = new Scanner(file);
 
             int numCursos = input.nextInt();
             for (int i = 0; i < numCursos; i++) {
                 // Le nome
-                input.nextLine();
+                input.skip("\n");
                 String nome = input.nextLine();
                 String codigo = input.nextLine();
                 int numDisciplinas = input.nextInt();
-                Curso curso = new Curso(nome, codigo);
-                uni.addCurso(curso);
-
+                
+                Curso curso = new Curso(codigo, nome);
+                universidade.addCurso(curso);
+                
                 for (int j = 0; j < numDisciplinas; j++) {
                     // ADMF52 1 OB 34 20102
-                    input.nextLine();
+                    input.skip("\n");
                     String nomeDisc = input.nextLine();
                     String codigoDisc = input.next();
-                    int semestre = input.nextInt();
                     String natureza = input.next();
                     int ch = input.nextInt();
-                    String curriculo = input.next();
-
-                    Disciplina disciplina = uni.findDisciplina(codigoDisc);
+                    
+                    Disciplina disciplina = universidade.findDisciplina(codigoDisc);
                     if (disciplina == null) {
-                        disciplina = new Disciplina(nomeDisc, codigoDisc, ch);
-                        uni.addDisciplina(disciplina);
+                        disciplina = new Disciplina(codigoDisc, nomeDisc, ch);
+                        universidade.addDisciplina(disciplina);
                     }
-                    ComponenteCurricular disciplinaCurso = new ComponenteCurricular(disciplina, semestre, natureza, new HashSet<Disciplina>());
-                    curso.addDisciplinaCurso(disciplinaCurso);
+                    ComponenteCurricular componenteCurricular = new ComponenteCurricular(disciplina, curso, natureza);
+                    curso.addDisciplinaCurso(componenteCurricular);
                 }
             }
 
-            //Curso oi = universidade.getCurso("105");
-            //oi.imprimeCurriculo("html");
-
             input.close();
             return true;
+            
         } catch (Exception e) {
-            System.out.println("Deu erro mans: " + e);
+            System.out.println("Deu erro: " + e);
             return false;
         }
 	}

@@ -1,6 +1,5 @@
 package br.ufba.mata62.team4.controller;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,7 +7,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import br.ufba.mata62.team4.service.CrStrategyService;
-import br.ufba.mata62.team4.service.HistoricoTxtService;
 import br.ufba.mata62.team4.service.SemestreStrategyService;
 
 import javax.swing.JLabel;
@@ -19,6 +17,10 @@ import java.awt.ScrollPane;
 
 public class EscalonamentoController extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
@@ -28,7 +30,7 @@ public class EscalonamentoController extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					EscalonamentoController frame = new EscalonamentoController();
+					EscalonamentoController frame = new EscalonamentoController(new SemestreStrategyService(), new CrStrategyService());
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +42,7 @@ public class EscalonamentoController extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public EscalonamentoController() {
+	public EscalonamentoController(SemestreStrategyService semestreStrategy, CrStrategyService crStrategy) {
 		setTitle("Escalonamento");
 		setBounds(100, 100, 478, 300);
 		contentPane = new JPanel();
@@ -52,15 +54,14 @@ public class EscalonamentoController extends JFrame {
 		lblCriterioDeEscalonamento.setBounds(10, 11, 414, 14);
 		contentPane.add(lblCriterioDeEscalonamento);
 		
-		JButton btnOrdemCrescenteDe = new JButton("Ordem crescente de semestre");
-		btnOrdemCrescenteDe.addActionListener(new ActionListener() {
+		JButton btnOrdemCrescenteDeSemestre = new JButton("Ordem crescente de semestre");
+		btnOrdemCrescenteDeSemestre.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				SemestreStrategyService semestreStrategy = new SemestreStrategyService();
 				semestreStrategy.calculaEscalonamento();
 			}
 		});
-		btnOrdemCrescenteDe.setBounds(238, 29, 214, 23);
-		contentPane.add(btnOrdemCrescenteDe);
+		btnOrdemCrescenteDeSemestre.setBounds(238, 29, 214, 23);
+		contentPane.add(btnOrdemCrescenteDeSemestre);
 		
 		JLabel lblEscalonamento = new JLabel("Escalonamento");
 		lblEscalonamento.setBounds(10, 59, 414, 14);
@@ -70,14 +71,13 @@ public class EscalonamentoController extends JFrame {
 		scrollPane.setBounds(10, 79, 442, 172);
 		contentPane.add(scrollPane);
 		
-		JButton btnOrdemDecrescenteDe = new JButton("Ordem decrescente de CR");
-		btnOrdemDecrescenteDe.addActionListener(new ActionListener() {
+		JButton btnOrdemDecrescenteDeCr = new JButton("Ordem decrescente de CR");
+		btnOrdemDecrescenteDeCr.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CrStrategyService crStrategy = new CrStrategyService();
 				crStrategy.calculaEscalonamento();
 			}
 		});
-		btnOrdemDecrescenteDe.setBounds(10, 29, 214, 23);
-		contentPane.add(btnOrdemDecrescenteDe);
+		btnOrdemDecrescenteDeCr.setBounds(10, 29, 214, 23);
+		contentPane.add(btnOrdemDecrescenteDeCr);
 	}
 }

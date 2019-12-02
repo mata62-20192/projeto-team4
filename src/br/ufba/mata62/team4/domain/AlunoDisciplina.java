@@ -1,6 +1,7 @@
 package br.ufba.mata62.team4.domain;
 
 public class AlunoDisciplina {
+	
 	private Aluno aluno;
 	private ComponenteCurricular componenteCurricular;
 	private Conceito conceito;
@@ -48,5 +49,4 @@ public class AlunoDisciplina {
 			return false;
 		}
 	}
-	
 }

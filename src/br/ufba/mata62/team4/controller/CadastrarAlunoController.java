@@ -1,13 +1,11 @@
 package br.ufba.mata62.team4.controller;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import br.ufba.mata62.team4.domain.Curso;
 import br.ufba.mata62.team4.service.CursoService;
 
 import javax.swing.JLabel;
@@ -18,12 +16,14 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class CadastrarAlunoController extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtNome;
 	private JTextField txtMatricula;
 	private JTextField txtSemestre;
-	private CursoService cursoService;
-
 	/**
 	 * Launch the application.
 	 */
@@ -45,7 +45,6 @@ public class CadastrarAlunoController extends JFrame {
 	 */
 	public CadastrarAlunoController(CursoService cursoService) {
 		setTitle("Cadastrar aluno");
-		this.cursoService = cursoService;
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

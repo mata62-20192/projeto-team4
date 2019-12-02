@@ -1,8 +1,6 @@
 package br.ufba.mata62.team4.controller;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.FlowLayout;
 import java.awt.Font;
 
 import javax.swing.JFrame;
@@ -12,23 +10,23 @@ import javax.swing.border.EmptyBorder;
 import br.ufba.mata62.team4.domain.Aluno;
 import br.ufba.mata62.team4.service.AlunoService;
 import br.ufba.mata62.team4.service.HistoricoHtmlService;
-import br.ufba.mata62.team4.service.HistoricoService;
 import br.ufba.mata62.team4.service.HistoricoTxtService;
 
 import javax.swing.JLabel;
-import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 public class ExibirAlunoController extends JFrame {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JLabel lblNome;
 	private JLabel lblMatricula;
 	private JLabel lblSemestre;
 	private JPanel contentPane;
-	private AlunoService alunoService;
 	private Aluno aluno;
 
 	/**
@@ -38,7 +36,7 @@ public class ExibirAlunoController extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ExibirAlunoController frame = new ExibirAlunoController(new AlunoService());
+					ExibirAlunoController frame = new ExibirAlunoController(new AlunoService(), new HistoricoTxtService(), new HistoricoHtmlService() );
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,8 +45,9 @@ public class ExibirAlunoController extends JFrame {
 		});
 	}
 	
-	public ExibirAlunoController(String aluno, String matricula, String semestre) {
-		this(new AlunoService());
+	public ExibirAlunoController(String aluno, String matricula, String semestre, Aluno aluno2) {
+		this(new AlunoService(), new HistoricoTxtService(), new HistoricoHtmlService());
+		this.aluno = aluno2;
 		lblMatricula.setText("Matricula: "+ matricula);
 		lblSemestre.setText("Semestre: "+ semestre);
 		lblNome.setText(aluno);
@@ -60,8 +59,7 @@ public class ExibirAlunoController extends JFrame {
 	 * @wbp.parser.constructor
 	 */
 	
-	public ExibirAlunoController(AlunoService alunoService) {
-		this.alunoService = alunoService;
+	public ExibirAlunoController(AlunoService alunoService, HistoricoTxtService historicoTxt, HistoricoHtmlService historicoHtml) {
 		setTitle("Exibir aluno");
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -80,8 +78,8 @@ public class ExibirAlunoController extends JFrame {
 		JButton btnNewButton = new JButton("Imprimir historico TXT");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				HistoricoTxtService historicoTxt = new HistoricoTxtService();
 				historicoTxt.GerarHistorico(aluno);
+				System.out.println("Imprimiu historico em arquivo txt criado na pasta do projeto");
 			}
 		});
 		btnNewButton.setBounds(10, 227, 196, 23);
@@ -90,8 +88,8 @@ public class ExibirAlunoController extends JFrame {
 		JButton btnImprimirHistoricoHtml = new JButton("Imprimir historico HTML");
 		btnImprimirHistoricoHtml.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				HistoricoHtmlService historicoHtml = new HistoricoHtmlService();
 				historicoHtml.GerarHistorico(aluno);
+				System.out.println("Imprimiu historico em arquivo html criado na pasta do projeto");
 			}
 		});
 		btnImprimirHistoricoHtml.setBounds(228, 227, 196, 23);

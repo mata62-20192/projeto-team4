@@ -16,5 +16,4 @@ public class HistoricoHtmlService extends HistoricoService {
 			e.printStackTrace();
 		}
 	}		
-
 }

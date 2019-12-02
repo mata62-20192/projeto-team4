@@ -3,6 +3,7 @@ package br.ufba.mata62.team4.domain;
 import java.util.ArrayList;
 
 public class Semestre {
+	
 	private String nomeSemestre;
 	private ArrayList<ComponenteCurricular> disciplinas;
 	private Curso curso;
@@ -36,6 +37,4 @@ public class Semestre {
 	public void setCurso(Curso curso) {
 		this.curso = curso;
 	}
-	
-	
 }

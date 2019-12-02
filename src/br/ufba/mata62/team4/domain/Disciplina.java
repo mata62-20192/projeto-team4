@@ -1,8 +1,7 @@
 package br.ufba.mata62.team4.domain;
 
-import java.util.ArrayList;
-
 public class Disciplina {
+	
 	private String codigoDisc;
 	private String nomeDisc;
 	private int ch;
@@ -16,21 +15,24 @@ public class Disciplina {
 	public String getCodigo() {
 		return codigoDisc;
 	}
+	
 	public void setCodigo(String codigo) {
 		this.codigoDisc = codigo;
 	}
+	
 	public String getNome() {
 		return nomeDisc;
 	}
+	
 	public void setNome(String nome) {
 		this.nomeDisc = nome;
 	}
+	
 	public int getCargaHoraria() {
 		return ch;
 	}
+	
 	public void setCargaHoraria(int cargaHoraria) {
 		this.ch = cargaHoraria;
-	}
-	
-	
+	}	
 }
