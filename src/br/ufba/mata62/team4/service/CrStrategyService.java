@@ -1,14 +1,16 @@
 package br.ufba.mata62.team4.service;
 
 import java.util.ArrayList;
-import  java.util.Collections; 
+import  java.util.Collections;
+
+import javax.swing.JPanel;
 
 import br.ufba.mata62.team4.domain.Aluno;
 
 public class CrStrategyService extends EscalonamentoStrategyService{
 
 	@Override
-	public ArrayList<Aluno> calculaEscalonamento() {
+	public ArrayList<Aluno> calculaEscalonamento(JPanel contentPane) {
 		CursoService cursoService = new CursoService();
 		AlunoService alunoService = new AlunoService();
 		System.out.println("Escalonamento:");

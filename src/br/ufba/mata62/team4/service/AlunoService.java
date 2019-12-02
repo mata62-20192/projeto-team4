@@ -53,32 +53,48 @@ public class AlunoService {
 	
 	public int calculaChTotal(Aluno aluno) {
 		int chTotal = 0;
-		for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinasCursadas())
-			chTotal += alunoDisciplina.getComponenteCurricular().getDisciplina().getCargaHoraria();
-		return chTotal;
+		if(aluno.getDisciplinasCursadas().isEmpty()) {
+			return 0;
+		}else {
+			for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinasCursadas())
+				chTotal += alunoDisciplina.getComponenteCurricular().getDisciplina().getCargaHoraria();
+			return chTotal;
+		}
 	}
 	
 	public int calculaChOb(Aluno aluno) {
 		int chOb = 0;
-		for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinasCursadas())
-			if(alunoDisciplina.getComponenteCurricular().getNatureza()== "OB")
-				chOb += alunoDisciplina.getComponenteCurricular().getDisciplina().getCargaHoraria();
-		return chOb;
+		if(aluno.getDisciplinasCursadas().isEmpty()) {
+			return 0;
+		}else {
+			for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinasCursadas())
+				if(alunoDisciplina.getComponenteCurricular().getNatureza()== "OB")
+					chOb += alunoDisciplina.getComponenteCurricular().getDisciplina().getCargaHoraria();
+			return chOb;
+		}
 	}
 	
 	public int calculaChOp(Aluno aluno) {
 		int chOp = 0;
-		for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinasCursadas())
-			if(alunoDisciplina.getComponenteCurricular().getNatureza()== "OP")
-				chOp += alunoDisciplina.getComponenteCurricular().getDisciplina().getCargaHoraria();
-		return chOp;
+		if(aluno.getDisciplinasCursadas().isEmpty()) {
+			return 0;
+		}else {
+			for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinasCursadas())
+				if(alunoDisciplina.getComponenteCurricular().getNatureza()== "OP")
+					chOp += alunoDisciplina.getComponenteCurricular().getDisciplina().getCargaHoraria();
+			return chOp;
+		}
 	}
 	
 	public double calculaCr(Aluno aluno) {
 		double cr = 0.0;
+		if(aluno.getDisciplinasCursadas().isEmpty()) {
+			return 0.0;
+		}else {
 		for (AlunoDisciplina alunoDisciplina : aluno.getDisciplinasCursadas())
 			cr += alunoDisciplina.getNota();
-		return cr/aluno.getDisciplinasCursadas().size();
+			return cr/aluno.getDisciplinasCursadas().size();
+		}
 	}
 
 	public void imprimeHistoricoTXT(Aluno aluno) throws IOException {
@@ -96,7 +112,8 @@ public class AlunoService {
 		    for(AlunoDisciplina ad : aluno.getDisciplinasCursadas()) {
 	    		escreverArquivo.println("-" + ad.getComponenteCurricular().getDisciplina().getNome() + " "+ ad.getComponenteCurricular().getDisciplina().getCodigo() + " "+ ad.getComponenteCurricular().getDisciplina().getCargaHoraria() + " "+ ad.getComponenteCurricular().getNatureza() + " "+ ad.getNota() + " "+ ad.getConceito());
 	   		}
-		    escreverArquivo.close();		    
+		    escreverArquivo.close();
+		    System.out.println("Imprimiu historico do aluno " + aluno.getNome() + " em arquivo txt criado na pasta do projeto");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -122,7 +139,8 @@ public class AlunoService {
    		}
 	    escreverArquivo.println("	</body>");
 	    escreverArquivo.println("</html>");  
-	    escreverArquivo.close();	    
+	    escreverArquivo.close();
+	    System.out.println("Imprimiu historico do aluno " + aluno.getNome() + " em arquivo html criado na pasta do projeto");
 	}
 	
 	public void addComponente(Aluno aluno, ComponenteCurricular componente) {	

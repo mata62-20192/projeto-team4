@@ -79,7 +79,6 @@ public class ExibirAlunoController extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				historicoTxt.GerarHistorico(aluno);
-				System.out.println("Imprimiu historico em arquivo txt criado na pasta do projeto");
 			}
 		});
 		btnNewButton.setBounds(10, 227, 196, 23);
@@ -89,7 +88,6 @@ public class ExibirAlunoController extends JFrame {
 		btnImprimirHistoricoHtml.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				historicoHtml.GerarHistorico(aluno);
-				System.out.println("Imprimiu historico em arquivo html criado na pasta do projeto");
 			}
 		});
 		btnImprimirHistoricoHtml.setBounds(228, 227, 196, 23);

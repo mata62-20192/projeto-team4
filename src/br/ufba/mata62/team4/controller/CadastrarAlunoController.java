@@ -89,7 +89,6 @@ public class CadastrarAlunoController extends JFrame {
 				} else if (cursoService.exists(matricula, nome)) {
 					JOptionPane.showMessageDialog(null, "O aluno ja esta cadastrado.");
 				} else {
-					System.out.println(nome + "\n" + matricula + "\n" + semestre);
 					try {
 						cursoService.cadastrarAluno(nome, matricula, semestre);
 					} catch (IllegalStateException er) {

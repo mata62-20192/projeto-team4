@@ -59,7 +59,6 @@ public class ListarCurriculoController extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					cursoService.imprimeCurriculoCursoTXT();
-					System.out.println("Imprimiu curriculo do curso em arquivo txt criado na pasta do projeto");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

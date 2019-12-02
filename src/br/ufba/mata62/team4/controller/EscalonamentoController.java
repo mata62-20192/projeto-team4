@@ -57,7 +57,7 @@ public class EscalonamentoController extends JFrame {
 		JButton btnOrdemCrescenteDeSemestre = new JButton("Ordem crescente de semestre");
 		btnOrdemCrescenteDeSemestre.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				semestreStrategy.calculaEscalonamento();
+				semestreStrategy.calculaEscalonamento(contentPane);
 			}
 		});
 		btnOrdemCrescenteDeSemestre.setBounds(238, 29, 214, 23);
@@ -74,7 +74,7 @@ public class EscalonamentoController extends JFrame {
 		JButton btnOrdemDecrescenteDeCr = new JButton("Ordem decrescente de CR");
 		btnOrdemDecrescenteDeCr.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				crStrategy.calculaEscalonamento();
+				crStrategy.calculaEscalonamento(contentPane);
 			}
 		});
 		btnOrdemDecrescenteDeCr.setBounds(10, 29, 214, 23);

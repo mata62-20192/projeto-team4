@@ -90,5 +90,6 @@ public class CursoService {
 	    	escreverArquivo.println("-" + cmp.getDisciplina().getCodigo() + " "+ cmp.getDisciplina().getNome() + " "+  cmp.getDisciplina().getCargaHoraria());
 		}
 	    escreverArquivo.close();
+	    System.out.println("Imprimiu curriculo do curso " + curso.getNome() + " em arquivo txt criado na pasta do projeto");
 	}
 }
