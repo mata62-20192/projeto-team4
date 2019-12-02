@@ -15,7 +15,7 @@ public class AlunoService {
 	
 	private ArrayList<Aluno> alunos;
 	
-	public void cadastrarAluno(String nome, String numMatricula, Curso curso) throws Exception {
+	public boolean cadastrarAluno(String nome, String numMatricula, Curso curso) throws Exception {
 		
 		if(!empty(nome) && !empty(numMatricula) && !exists(numMatricula)) {
 			Aluno novoAluno = new Aluno(nome, numMatricula, curso);
@@ -23,6 +23,7 @@ public class AlunoService {
 			novoAluno.setNum_matricula(numMatricula);
 			novoAluno.setCurso(curso);
 			this.alunos.add(novoAluno);
+			return true;
 		}	
 		throw new Exception();
 	}

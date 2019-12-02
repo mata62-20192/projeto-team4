@@ -5,20 +5,35 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import br.ufba.mata62.team4.domain.Aluno;
+import br.ufba.mata62.team4.domain.Curso;
+import br.ufba.mata62.team4.service.AlunoService;
+import junit.framework.Assert;
+
 class AlunoServiceTest {
 
+	AlunoService alunoService;
+	Curso curso;
+	Aluno aluno;
+		
 	@BeforeEach
 	void setUp() throws Exception {
+		alunoService = new AlunoService();
+		curso = new Curso("01","Sistemas de informacao");
+		aluno = new Aluno("carlos", "12345", curso);
+		alunoService.cadastrarAluno(aluno.getNome(), aluno.getNum_matricula(), aluno.getCurso());
 	}
 
 	@Test
-	void testCadastrarAluno() {
-		fail("Not yet implemented");
+	void testCadastrarAluno() throws Exception {
+		boolean result = alunoService.cadastrarAluno("marcelo", "1234567", curso);
+		Assert.assertTrue(result);
+		
 	}
 
 	@Test
 	void testGetAluno() {
-		fail("Not yet implemented");
+		Assert.assertEquals("carlos", alunoService.getAluno("carlos"));
 	}
 
 	@Test
