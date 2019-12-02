@@ -14,7 +14,7 @@ public class Curso {
 		super();
 		this.alunos = new ArrayList<Aluno>();
 		this.codigoCurso = codigo;
-		this.codigoCurso = nome;
+		this.nomeCurso = nome;
 		this.discObrigatorias = new ArrayList<Semestre>();
 		this.discOptativas = new ArrayList<ComponenteCurricular>();
 	}
@@ -36,7 +36,7 @@ public class Curso {
 	}
 	
 	public String getNome() {
-		return codigoCurso;
+		return nomeCurso;
 	}
 	
 	public void setNome(String nome) {

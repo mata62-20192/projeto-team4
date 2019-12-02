@@ -3,7 +3,6 @@ package br.ufba.mata62.team4.domain;
 import java.io.IOException;
 
 import br.ufba.mata62.team4.controller.UniversidadeController;
-import br.ufba.mata62.team4.repository.InputDeDados;
 import br.ufba.mata62.team4.service.*;
 import java.util.ArrayList;
 
@@ -50,12 +49,6 @@ public class Main {
 		aluno.setDisciplinas_cursadas(disc_cursadas);
 		aluno.getDisciplinasCursadas().get(0).setConceito(Conceito.Aprovado);
 		aluno.getDisciplinasCursadas().get(0).setNota(7);
-		System.out.println(cc.getDiscObrigatorias().get(0).getDisciplinas().get(0).getNatureza());
-		System.out.println(lc.getDiscOptativas().get(0).getDisciplina().getNome());
-		System.out.println(si.getDiscObrigatorias().get(0).getNome_semestre());
-		System.out.println(aluno.getDisciplinasCursadas().get(0).getComponenteCurricular().getDisciplina().getNome());
-		System.out.println(aluno.getDisciplinasCursadas().get(0).getNota());
-		
 		
 		cursoService.getCurso().addDisciplinaCurso(compLC);
 		cursoService.getCurso().addDisciplinaCurso(compSI);
@@ -66,7 +59,6 @@ public class Main {
 		aluno2.addDisciplina(ad2);
 		aluno2.getDisciplinasCursadas().get(0).setConceito(Conceito.Aprovado);
 		aluno2.getDisciplinasCursadas().get(0).setNota(8);
-
 		
 		Aluno aluno3 = new Aluno("carlos","12345", si);
 		AlunoDisciplina ad3 = new AlunoDisciplina(aluno3, compSI);
@@ -77,16 +69,10 @@ public class Main {
 		aluno3.addDisciplina(ad4);
 		aluno3.getDisciplinasCursadas().get(1).setConceito(Conceito.Aprovado);
 		aluno3.getDisciplinasCursadas().get(1).setNota(4);
-
 		
 		cursoService.getCurso().addAluno(aluno);
 		cursoService.getCurso().addAluno(aluno2);
 		cursoService.getCurso().addAluno(aluno3);
-		
-		Universidade ufba = new Universidade("Universidade Federal da Bahia", "UFBA");
-		InputDeDados input = new InputDeDados(ufba, "dados.txt");
-		input.leArquivo();
-		System.out.println(aluno.getDisciplinasCursadas().get(0).getComponenteCurricular().getNatureza());
 		
 		UniversidadeController uni = new UniversidadeController();
 		uni.main(args);

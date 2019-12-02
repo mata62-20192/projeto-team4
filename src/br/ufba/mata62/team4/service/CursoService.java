@@ -12,7 +12,7 @@ import br.ufba.mata62.team4.domain.Semestre;
 
 public class CursoService {
 	
-	private static Curso curso = new Curso("MATA-55", "Banco de Dados");
+	private static Curso curso = new Curso("1", "Sistemas de informacao");
 	
 	public void cadastrarAluno(String nome, String numMatricula, String semestre) throws IllegalStateException,IllegalArgumentException {
 		
@@ -85,13 +85,10 @@ public class CursoService {
 	    escreverArquivo.println("Curriculo de " + curso.getNome());
 	    escreverArquivo.println(" ");
 	    escreverArquivo.println("Componentes curriculares:");
-	    for (Semestre semestre : curso.getDiscObrigatorias()) {
-	    	//escreverArquivo.println(i + "� semestre:");
-	    	escreverArquivo.println(semestre.getNome_semestre());
-	    	for(ComponenteCurricular cc : semestre.getDisciplinas()) {
-	    		escreverArquivo.println("-" + cc.getDisciplina().getCodigo() + " "+ cc.getDisciplina().getNome() + " "+  cc.getDisciplina().getCargaHoraria());
-	   		}
-	   	}
+	    ArrayList<ComponenteCurricular> componentes = this.getComponentes();
+	    for (ComponenteCurricular cmp : componentes) {
+	    	escreverArquivo.println("-" + cmp.getDisciplina().getCodigo() + " "+ cmp.getDisciplina().getNome() + " "+  cmp.getDisciplina().getCargaHoraria());
+		}
 	    escreverArquivo.close();
 	}
 }
