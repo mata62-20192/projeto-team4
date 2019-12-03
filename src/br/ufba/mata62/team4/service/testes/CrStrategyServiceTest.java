@@ -5,14 +5,14 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class CrStrategyService {
+class CrStrategyServiceTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
 	}
 
 	@Test
-	void testCalculaEscalonamento() {
+	void test() {
 		fail("Not yet implemented");
 	}
 
