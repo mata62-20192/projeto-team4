@@ -1,19 +1,16 @@
 package br.ufba.mata62.team4.service.testes;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import br.ufba.mata62.team4.service.SemestreStrategyService;
+
 class SemestreStrategyServiceTest {
-
-	@BeforeEach
-	void setUp() throws Exception {
-	}
-
 	@Test
 	void testCalculaEscalonamento() {
-		fail("Not yet implemented");
+		SemestreStrategyService semestreStrategyService = new SemestreStrategyService();
+		
+		Assertions.assertTrue(semestreStrategyService.calculaEscalonamento());
 	}
-
 }

@@ -14,21 +14,13 @@ public class CursoService {
 	
 	private static Curso curso = new Curso("1", "Sistemas de informacao");
 	
-	public void cadastrarAluno(String nome, String numMatricula, String semestre) throws IllegalStateException,IllegalArgumentException {
-		
-			if(empty(nome) || empty(numMatricula)) {
-				throw new  IllegalStateException("Nao eh possivel adicionar um aluno sem nome, matricula ou semestre.");
-			}
-			if(exists(numMatricula, nome)) {
-				throw new IllegalArgumentException("Aluno ja faz parte do curso.");
-			}
-			if(!empty(nome) && !empty(numMatricula)) {
+	public boolean cadastrarAluno(String nome, String numMatricula, String semestre) {
 				Aluno novoAluno = new Aluno(nome, numMatricula, curso);
 				novoAluno.setNome(nome);
 				novoAluno.setNum_matricula(numMatricula);
 				novoAluno.setCurso(curso);
-				curso.addAluno(novoAluno);	
-			}
+				curso.addAluno(novoAluno);
+				return true;
 		}
 	
 	public Curso getCurso() {
@@ -36,10 +28,6 @@ public class CursoService {
 	}
 
 	public ArrayList<ComponenteCurricular> getComponentes() {
-		if(curso == null) {
-			return new ArrayList<ComponenteCurricular>();
-		}
-		
 		ArrayList<ComponenteCurricular> componentes = new ArrayList<ComponenteCurricular>();
 		ArrayList<ComponenteCurricular> optativas = curso.getDiscOptativas();
 		for (ComponenteCurricular componente : optativas) {
@@ -52,13 +40,10 @@ public class CursoService {
 				componentes.add(componente);
 			}
 		}
-		return componentes;
+		return componentes; 
 	}
 
 	public ArrayList<Aluno> getAlunos() {	
-		if(curso == null) {
-			return new ArrayList<Aluno>();
-		}
 		return curso.getAlunos();
 	}
 	
@@ -74,12 +59,7 @@ public class CursoService {
 		return false;
 	}
 	
-	public static boolean empty( final String s ) {
-		  // Null-safe, short-circuit evaluation.
-		  return s == null || s.trim().isEmpty();
-		}
-	
-	public void imprimeCurriculoCursoTXT() throws IOException {
+	public boolean imprimeCurriculoCursoTXT() throws IOException {
 		FileWriter arquivo = new FileWriter("Curriculo de "+ curso.getNome()+ ".txt");
 	    PrintWriter escreverArquivo = new PrintWriter(arquivo);
 	    escreverArquivo.println("Curriculo de " + curso.getNome());
@@ -91,5 +71,6 @@ public class CursoService {
 		}
 	    escreverArquivo.close();
 	    System.out.println("Imprimiu curriculo do curso " + curso.getNome() + " em arquivo txt criado na pasta do projeto");
+	    return true;
 	}
 }

@@ -1,7 +1,5 @@
 package br.ufba.mata62.team4.service.testes;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.io.IOException;
 
 import org.junit.jupiter.api.Assertions;
@@ -24,7 +22,6 @@ class AlunoServiceTest {
 	Aluno aluno2;
 	Aluno aluno3;
 	
-		
 	@BeforeEach
 	void setUp() throws Exception {
 		alunoService = new AlunoService();
@@ -90,7 +87,6 @@ class AlunoServiceTest {
 	void testAddComponente() {
 		Disciplina disciplina = new Disciplina("000", "Redes", 68); 
 		ComponenteCurricular cmp = new ComponenteCurricular(disciplina, curso, "OB");
-		Aluno aluno2 = new Aluno("mario", "12345678", curso);
 		
 		alunoService.addComponente(aluno2, cmp);
 		

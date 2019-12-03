@@ -37,4 +37,8 @@ public class Semestre {
 	public void setCurso(Curso curso) {
 		this.curso = curso;
 	}
+	
+	public void addDisciplina(ComponenteCurricular cmp) {
+		this.disciplinas.add(cmp);
+	}
 }
